@@ -1,0 +1,41 @@
+var passport              = require("passport"),
+    keys                  = require("./keys"),
+    GoogleStrategy        = require( 'passport-google-oauth2' ).Strategy,
+    User                  = require("../models/user");
+
+
+// to cookie
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+// from cookie
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user){
+        done(null, user);
+    });
+})
+
+passport.use(new GoogleStrategy({
+    // consumerKey: "1021222270760-o4opjt5b9ejea92voiiblnaoevfjoelo.apps.googleusercontent.com",
+    // consumerSecret: "HAqFrTAPazqpThcmhbEme_Xw",
+    clientID:     keys.google.clientID,
+    clientSecret: keys.google.clientSecret,
+    callbackURL: "/auth/google/callback",
+}, function(request, accessToken, refreshToken, profile, done) {
+    User.findOne({googleId: profile.id}, function(err, user) {
+        if(user) {
+            console.log("user is:", user);
+            done(null, user);
+        } else {
+            user = new User({
+                username: profile.displayName,
+                googleId: profile.id
+            });
+            user.save(function(err, user) {
+                if (err) console.log(err);
+                return done(err, user);
+            });
+        }
+    });
+}));

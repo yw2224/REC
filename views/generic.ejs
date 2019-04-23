@@ -1,0 +1,555 @@
+
+<!DOCTYPE HTML>
+<!--
+    Intensify by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>Personal info</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/progress.css"/>
+</head>
+<body class="subpage">
+
+<!-- Header -->
+<header id="header">
+    <nav class="left">
+        <a href="#menu"><span>Menu</span></a>
+    </nav>
+    <a href="index.html" class="logo">Video Rec for Good</a>
+    <nav class="right">
+        <a href="#" class="button alt"><%= user.username %></a>
+    </nav>
+</header>
+
+<!-- MultiStep Form -->
+<div class="row">
+    <div class="col-md-12 col-md-offset-3">
+        <form id="msform">
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">First Survey</li>
+                <li>Previous Take-out</li>
+                <li>Memory</li>
+                <li>Intention</li>
+                <li>Finished!</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">Basic Information</h2>
+                <h3 class="fs-subtitle">Tell us something more about you</h3>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrmlaowthFAHdGT5t9tkovK-KXHYwb2GYNhaPcffMRbEVilw/viewform?embedded=true" width="1000" height="2667" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Previous take-out</h2>
+                <h3 class="fs-subtitle">Your YouTube history of last 3 months</h3>
+                <ol style="color: #FFFFFF;">
+                    <li>Visit <a href="https://takeout.google.com/settings/takeout/custom/youtube">YouTube Takeout
+                        Website</a> and sign in with your google account
+                    </li>
+                    <li>Select include all kinds of data and press ‘Next step’.</li>
+                    <li>Customize archive format to .zip with 2GB size and press “Create Archive”</li>
+                    <li>Upload the zip file</li>
+                </ol>
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+                <!--<input type="file" name="pic" accept="image/*">-->
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">What topics do you watched on YouTube recently?</h2>
+<!--                <div class="row with-margin">-->
+<!--                    &lt;!&ndash;<div class="col">&ndash;&gt;-->
+<!--                        &lt;!&ndash;<label class="image-checkbox">&ndash;&gt;-->
+<!--                            &lt;!&ndash;<img class="img-responsive" src="images/pic01.jpg"/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;<input type="checkbox" name="image[]" value=""/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;<i class="fa fa-check hidden"></i>&ndash;&gt;-->
+<!--                        &lt;!&ndash;</label>&ndash;&gt;-->
+<!--                    &lt;!&ndash;</div>&ndash;&gt;-->
+<!--                    <div class="col">-->
+<!--                        <input class="form-check-input" type="checkbox" value="" id="memOpt1">-->
+<!--                        <label class="form-check-label" for="memOpt1">-->
+<!--                            Auto & Vehicles-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <input class="form-check-input" type="checkbox" value="" id="memOpt2">-->
+<!--                        <label class="form-check-label" for="memOpt2">-->
+<!--                            Beauty & Fashion-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <input class="form-check-input" type="checkbox" value="" id="memOpt3">-->
+<!--                        <label class="form-check-label" for="memOpt3">-->
+<!--                            Comedy-->
+<!--                        </label>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt4">
+                        <label class="form-check-label" for="memOpt4">
+                            Education
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt5">
+                        <label class="form-check-label" for="memOpt5">
+                            Entertainment
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt6">
+                        <label class="form-check-label" for="memOpt6">
+                            Family Entertainment
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt7">
+                        <label class="form-check-label" for="memOpt7">
+                            Film & Animation
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt8">
+                        <label class="form-check-label" for="memOpt8">
+                            Food
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt9">
+                        <label class="form-check-label" for="memOpt9">
+                            Gaming
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt10">
+                        <label class="form-check-label" for="memOpt10">
+                            How-to & Style
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt11">
+                        <label class="form-check-label" for="memOpt11">
+                            Music
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt12">
+                        <label class="form-check-label" for="memOpt12">
+                            News & Politics
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt13">
+                        <label class="form-check-label" for="memOpt13">
+                            Nonprofits & Activism
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt14">
+                        <label class="form-check-label" for="memOpt14">
+                            People & Blogs
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt15">
+                        <label class="form-check-label" for="memOpt15">
+                            Pets & Animals
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt16">
+                        <label class="form-check-label" for="memOpt16">
+                            Science & Technology
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt17">
+                        <label class="form-check-label" for="memOpt17">
+                            Sports
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="memOpt18">
+                        <label class="form-check-label" for="memOpt18">
+                            Travel & Events
+                        </label>
+                    </div>
+                </div>
+
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">What do you want to explore recently?</h2>
+                <!--<h3 class="fs-subtitle">Fill in your credentials</h3>-->
+                <!--<form>-->
+                <div class="row with-margin">
+                    <div class="col">
+                        <label class="image-checkbox">
+                            <img class="img-responsive" src="images/Music.jpeg"/>
+                            <input type="checkbox" name="image[]" value=""/>
+                            <!--<i class="fa fa-check hidden"></i>-->
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="image-checkbox">
+                            <img class="img-responsive" src="images/Animal.jpeg"/>
+                            <input type="checkbox" name="image[]" value=""/>
+                            <!--<i class="fa fa-check hidden"></i>-->
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="image-checkbox">
+                            <img class="img-responsive" src="images/How-to.jpeg"/>
+                            <input type="checkbox" name="image[]" value=""/>
+                            <!--<i class="fa fa-check hidden"></i>-->
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="image-checkbox">
+                            <img class="img-responsive" src="images/Beauty.jpeg"/>
+                            <input type="checkbox" name="image[]" value=""/>
+                            <!--<i class="fa fa-check hidden"></i>-->
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="image-checkbox">
+                            <img class="img-responsive" src="images/Family.jpeg"/>
+                            <input type="checkbox" name="image[]" value=""/>
+                            <!--<i class="fa fa-check hidden"></i>-->
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="image-checkbox">
+                            <img class="img-responsive" src="images/Auto.jpeg"/>
+                            <input type="checkbox" name="image[]" value=""/>
+                            <!--<i class="fa fa-check hidden"></i>-->
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <!--<div class="col">-->
+                        <!--<label class="image-checkbox">-->
+                            <!--<img class="img-responsive" src="images/pic01.jpg"/>-->
+                            <!--<input type="checkbox" name="image[]" value=""/>-->
+                            <!--<i class="fa fa-check hidden"></i>-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt1">
+                        <label class="form-check-label" for="intentOpt1">
+                            Auto & Vehicles
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt2">
+                        <label class="form-check-label" for="intentOpt2">
+                            Beauty & Fashion
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt3">
+                        <label class="form-check-label" for="intentOpt3">
+                            Comedy
+                        </label>
+                    </div>
+
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt4">
+                        <label class="form-check-label" for="intentOpt4">
+                            Education
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt5">
+                        <label class="form-check-label" for="intentOpt5">
+                            Entertainment
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt6">
+                        <label class="form-check-label" for="intentOpt6">
+                            Family Entertainment
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt7">
+                        <label class="form-check-label" for="intentOpt7">
+                            Film & Animation
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt8">
+                        <label class="form-check-label" for="intentOpt8">
+                            Food
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt9">
+                        <label class="form-check-label" for="intentOpt9">
+                            Gaming
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt10">
+                        <label class="form-check-label" for="intentOpt10">
+                            How-to & Style
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt11">
+                        <label class="form-check-label" for="intentOpt11">
+                            Music
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt12">
+                        <label class="form-check-label" for="intentOpt12">
+                            News & Politics
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt13">
+                        <label class="form-check-label" for="intentOpt13">
+                            Nonprofits & Activism
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt14">
+                        <label class="form-check-label" for="intentOpt14">
+                            People & Blogs
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt15">
+                        <label class="form-check-label" for="intentOpt15">
+                            Pets & Animals
+                        </label>
+                    </div>
+                </div>
+                <div class="row with-margin">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt16">
+                        <label class="form-check-label" for="intentOpt16">
+                            Science & Technology
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt17">
+                        <label class="form-check-label" for="intentOpt17">
+                            Sports
+                        </label>
+                    </div>
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="" id="intentOpt18">
+                        <label class="form-check-label" for="intentOpt18">
+                            Travel & Events
+                        </label>
+                    </div>
+                </div>
+                <!--</form>-->
+
+<!--                <h2 class="fs-title">Experiment Phase</h2>-->
+<!--                <h3 class="fs-subtitle">You have checked out 23 emails! You can precede to next step after 29 days!</h3>-->
+
+<!--                <input type="text" name="suggestion" placeholder="Anything to tell us?"/>-->
+<!--                &lt;!&ndash;<input type="password" name="pass" placeholder="Password"/>&ndash;&gt;-->
+<!--                &lt;!&ndash;<input type="password" name="cpass" placeholder="Confirm Password"/>&ndash;&gt;-->
+<!--                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>-->
+<!--                <input type="button" name="Suggestion" class="button action-button-previous" value="Submit">-->
+<!--                <input type="button" name="next" class="next action-button" value="Next" disabled>-->
+            </fieldset>
+
+
+        </form>
+    </div>
+</div>
+<!-- /.MultiStep Form -->
+
+<!-- Scripts -->
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+
+
+<script type="text/javascript">
+    //jQuery time
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var left, opacity, scale; //fieldset properties which we will animate
+    var animating; //flag to prevent quick multi-click glitches
+    $(".next").click(function () {
+        if (animating) return false;
+        animating = true;
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+        //activate next step on progressbar using the index of next_fs
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+            step: function (now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale current_fs down to 80%
+                scale = 1 - (1 - now) * 0.2;
+                //2. bring next_fs from the right(50%)
+                left = (now * 50) + "%";
+                //3. increase opacity of next_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({
+                    'transform': 'scale(' + scale + ')',
+                    'position': 'absolute'
+                });
+                next_fs.css({'left': left, 'opacity': opacity});
+            },
+            duration: 800,
+            complete: function () {
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+    $(".previous").click(function () {
+        if (animating) return false;
+        animating = true;
+        current_fs = $(this).parent();
+        previous_fs = $(this).parent().prev();
+        //de-activate current step on progressbar
+        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+        //show the previous fieldset
+        previous_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+            step: function (now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale previous_fs from 80% to 100%
+                scale = 0.8 + (1 - now) * 0.2;
+                //2. take current_fs to the right(50%) - from 0%
+                left = ((1 - now) * 50) + "%";
+                //3. increase opacity of previous_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({'left': left});
+                previous_fs.css({'transform': 'scale(' + scale + ')', 'opacity': opacity});
+            },
+            duration: 800,
+            complete: function () {
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+    $(".submit").click(function () {
+        return false;
+    })
+</script>
+
+<script>
+    function bs_input_file() {
+        $(".input-file").before(
+            function () {
+                if (!$(this).prev().hasClass('input-ghost')) {
+                    var element = $("<input type='file' class='input-ghost' style='visibility:hidden; height:0'>");
+                    element.attr("name", $(this).attr("name"));
+                    element.change(function () {
+                        element.next(element).find('input').val((element.val()).split('\\').pop());
+                    });
+                    $(this).find("button.btn-choose").click(function () {
+                        element.click();
+                    });
+                    $(this).find("button.btn-reset").click(function () {
+                        element.val(null);
+                        $(this).parents(".input-file").find('input').val('');
+                    });
+                    $(this).find('input').css("cursor", "pointer");
+                    $(this).find('input').mousedown(function () {
+                        $(this).parents('.input-file').prev().click();
+                        return false;
+                    });
+                    return element;
+                }
+            }
+        );
+    }
+    $(function () {
+        bs_input_file();
+    });
+</script>
+
+<script>
+    // upload file name appears in the box
+    // Add the following code if you want the name of the file appear on select
+    window.onload = function () {
+        var notification = document.querySelector("#overlay");
+        notification.style.visibility = "hidden";
+    };
+    $(".custom-file-input").on("change", function () {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+</script>
+
+<script>
+    // for image gallery
+    // image gallery
+    // init the state from the input
+    $(".image-checkbox").each(function () {
+        if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+            $(this).addClass('image-checkbox-checked');
+        }
+        else {
+            $(this).removeClass('image-checkbox-checked');
+        }
+    });
+    // sync the state to the input
+    $(".image-checkbox").on("click", function (e) {
+        $(this).toggleClass('image-checkbox-checked');
+        var $checkbox = $(this).find('input[type="checkbox"]');
+        $checkbox.prop("checked", !$checkbox.prop("checked"))
+        e.preventDefault();
+    });
+</script>
+</body>
+</html>
