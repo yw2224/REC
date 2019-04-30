@@ -1,0 +1,51 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 2rem;
+}
+
+#overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+    visibility: hidden;
+
+}
+
+.messagebox {
+    overflow: scroll;
+    background: #ffffff;
+    border-radius: 5px;
+    height: 50%;
+    width: 60%;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    text-align: center;
+}
+.messagebox h3{
+    color: #000000;
+    margin-top: 20px;
+}
+.messagebox h4{
+    text-align: left;
+    margin-left: 10px;
+}
+.messagebox p{
+    text-align: left;
+    margin-right:10px;
+    margin-left:10px;
+}
+
+.container {
+    width: 75%;
+    margin: auto;
+}
+
+.content {
+    text-align: justify;
+}
