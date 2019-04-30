@@ -3,6 +3,8 @@ var passport              = require("passport"),
     GoogleStrategy        = require( 'passport-google-oauth2' ).Strategy,
     User                  = require("../models/user");
 
+// var GoogleDriveStrategy = require('passport-google-drive').Strategy;
+
 
 // to cookie
 passport.serializeUser(function(user, done) {
@@ -23,6 +25,8 @@ passport.use(new GoogleStrategy({
     clientSecret: keys.google.clientSecret,
     callbackURL: "/auth/google/callback",
 }, function(request, accessToken, refreshToken, profile, done) {
+    console.log("accessToken");
+    console.log(accessToken);
     User.findOne({googleId: profile.id}, function(err, user) {
         if(user) {
             console.log("user is:", user);
@@ -39,3 +43,22 @@ passport.use(new GoogleStrategy({
         }
     });
 }));
+
+
+// passport.use(new GoogleDriveStrategy({
+//     clientID:     keys.google.clientID,
+//     clientSecret: keys.google.clientSecret,
+//     callbackURL: "/auth/drive/callback"
+//   },
+//   function (accessToken, refreshToken, profile, done) {
+//     // asynchronous verification, for effect...
+//     process.nextTick(function () {
+//
+//       // To keep the example simple, the user's Google profile is returned to
+//       // represent the logged-in user.  In a typical application, you would want
+//       // to associate the Google account with a user record in your database,
+//       // and return that user instead.
+//       return done(null, profile);
+//     });
+//   }
+// ));

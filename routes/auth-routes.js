@@ -3,7 +3,9 @@ const router               = require("express").Router(),
 
 
 router.get('/google', passport.authenticate('google', {
-    scope: ['profile']
+    accessType: 'offline',
+    prompt: 'consent',
+    scope: ['profile', 'https://www.googleapis.com/auth/drive.file']
 }));
 
 router.get('/google/callback', passport.authenticate('google'), function(req, res) {
@@ -12,6 +14,21 @@ router.get('/google/callback', passport.authenticate('google'), function(req, re
       // Successful authentication, redirect home.
     res.redirect('/generic');
 });
+
+// router.get('/drive', passport.authenticate('google-drive', {
+//     scope: ['https://www.googleapis.com/auth/drive.readonly']
+// }));
+
+
+// router.get('/drive', passport.authenticate('google', {
+//     scope: ['https://www.googleapis.com/auth/drive.readonly']
+// }));
+//
+//
+// router.get('/drive/callback', passport.authenticate('google'), function (req, res) {
+//     res.redirect('/');
+// });
+
 
 router.get("/logout", function(req, res){
     req.logout();
