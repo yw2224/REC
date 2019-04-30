@@ -1,298 +1,198 @@
-<!DOCTYPE HTML>
-<!--
-    Intensify by TEMPLATED
-    templated.co @templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-<head>
-    <title>Intensify by TEMPLATED</title>
-    <meta charset="utf-8"/>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Recommendation for good</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
-</head>
-<body>
 
-<!-- Header -->
-<header id="header">
-    <nav class="left">
-        <a href="#menu"><span>Menu</span></a>
-    </nav>
-    <a href="index.html" class="logo">Video Rec for Good</a>
-    <nav class="right">
-        <a href="#" class="button alt" onclick="loginFormShowup()">Log in</a>
-    </nav>
-</header>
+    <!-- Custom styles for this template -->
+    <link href="../public/assets/css/index_style.css" rel="stylesheet">
+  </head>
 
-<!--&lt;!&ndash; Menu &ndash;&gt;-->
-<!--<nav id="menu">-->
-<!--<ul class="links">-->
-<!--<li><a href="index.html">Home</a></li>-->
-<!--<li><a href="generic.html">Generic</a></li>-->
-<!--<li><a href="elements.html">Elements</a></li>-->
-<!--</ul>-->
-<!--<ul class="actions vertical">-->
-<!--<li><a href="#" class="button fit" id="loginButton">Login</a></li>-->
-<!--</ul>-->
-<!--</nav>-->
+  <body>
 
-<!-- LoginForm -->
-<section id="signinbox">
-    <div class="signinbox-wrapper">
-        <div class="fblightbox-header">
-            <h3>Welcome Back</h3>
-        </div>
-        <div class="fblightbox-content">
-            <form class="p-2" method="post" action="#">
-                <div class="12u 12u$(xsmall)">
-                    <input type="text" name="name" id="name" value="" placeholder="Name or Email"/>
-                </div>
-            </form>
-            <div class="p-2">
-                <a href="generic.html" id="loginSubmit" class="button special" margin=10px>LOG IN</a>
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <a class="navbar-brand" href="#">Video Rec for Good</a>
+
+      <!-- <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
-        </div>
+          </li>
+        </ul>
+      </div> -->
+    </nav>
 
-    </div>
-</section>
-
-<!-- Banner -->
-<section id="banner">
-    <div class="content">
-        <h1>A study on video recommendation that improves <br> our awareness, understanding and behavior.</h1>
-        <p> Current recommender systems are typically trained to promote trendy items and to reinforce users’ historical
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">A study on better video recommendation</h1>
+        <p> We are conducting study on better recommendation system that can improve our awareness, understanding and behavior. Current recommender systems are typically trained to promote trendy items and to reinforce users’ historical
             behavior. The quality and variety of the videos we watch are diminished implicitly and greatly. Our goal is
-            to find a recommender system that can increase our general wellbeing and the public’s health. </p>
-        <h3>Participants will receive high-quality personalized recommendations and potentially 50-dollar reward!<br>
-            Only take 10 minutes!</h3>
-        <div class="wrapper">
-            <ul class="actions">
-                <li><a href="#footer" class="button scrolly">Join us</a></li>
-            </ul>
+            to find a recommender system that can increase our general wellbeing and the public’s health.</p>
+        <h4>Participants will receive high-quality personalized recommendations and potentially 50-dollar reward!<br>
+            Only take 10 minutes!</h4>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button" onclick="consentShowUp()">Sign up &raquo;</a> 
+          <a class="btn btn-primary btn-lg" href="generic.ejs" role="button" >Log in &raquo;</a></p>
+        <p> </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>10-minute Survey</h2>
+          <p>To provide personalized video recommendations, we need to know more about you. The survey takes <b>less
+                    than 10 minutes!</p>
         </div>
-
-    </div>
-</section>
-
-<!-- Two -->
-<section id="two" class="wrapper style1 special">
-    <div class="inner">
-        <h2>Your data will be secure and de-identified</h2>
-        <figure>
-            <blockquote>
-                The data collected will only be used for this study, and will be de-identified and anonymized before
-                analysis.
-                <br>The data collected will be kept safely, only researchers on this study will have access to it.
-            </blockquote>
-            <footer>
-                <cite class="author">IRB Number: 12345 </cite>
-            </footer>
-        </figure>
-    </div>
-</section>
-
-<!-- Three -->
-<section id="three" class="wrapper">
-    <div class="inner flex flex-3">
-        <div class="flex-item box">
-            <div class="image fit">
-                <img src="images/pic02.jpg" alt=""/>
-            </div>
-            <div class="content">
-                <h3>10-minute Survey</h3>
-                <p>To provide personalized video recommendations, we need to know more about you. The survey takes <b>less
-                    than 10 minutes!</b></p>
-            </div>
+        <div class="col-md-4">
+          <h2>Great videos</h2>
+          <p>You will receive emails with great videos tailored especially for you. They are different from YouTube but can be healthier!</p>
+       </div>
+        <div class="col-md-4">
+          <h2>Earn 50 dollars!</h2>
+          <p>10% of the participants can get Amazon gift card worth <b>50 dollars</b>. The more you open our emails, the higher your chance!</p>
         </div>
-        <div class="flex-item box">
-            <div class="image fit">
-                <img src="images/pic03.jpg" alt=""/>
-            </div>
-            <div class="content">
-                <h3>Great videos</h3>
-                <p>You will receive emails with great videos tailored especially for you. They are different from
-                    YouTube but can be healthier!</p>
-            </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+    <!-- consent form -->
+    <div id="overlay">
+        <div class="messagebox">
+            <h3>Participant consent</h3>
+            <p>We are asking you to participate in a research study titled “Intention-aware Recommendation System on
+                YouTube”. We will describe this study to you and answer any of your questions. This study is being led by
+                Siyu Yao, Yixue Wang, Longqi Yang, Hongyi Wen, Department of Computer Science at Cornell University. The
+                Faculty Advisor for this study is Deborah Estrin, Michael Sobolev, Department of Computer Science at Cornell
+                University.</p>
+            <h4>What you need to do to participate:</h4>
+            <p>The whole process will be conducted online. The process includes:<br>
+                1. Online surveys with an interval of 3 months in between<br>
+                2. Update of YouTube takeout data of your account (downloaded from YouTube takeout website) <br>
+                3. Two to three months of continuous emails with our recommended YouTube videos.</p>
+            <h4>Risks and discomforts</h4>
+            <p>We do not anticipate any risks from participating in this research.</p>
+            <h4>Benefits</h4>
+            <p>Through this study, we hope to learn more about video recommender systems. Information from this study may
+                contribute to better recommendation mechanisms, thus benefit you and other people regarding online content
+                consuming experience.</p>
+            <h4>Compensation for participation</h4>
+            <p>There is a chance of getting a 50-dollar gift card by the end of the study. The probability of getting the
+                reward is based on the 'tickets' you gain in the study.
+                By uploading your youtube takeout package and fill in the questionnaire, you can get 5 lottery tickets. And
+                every time you open an email with our recommended videos, you can get 1 lottery ticket.
+            <h4>Privacy/Confidentiality/Data Security</h4>
+
+            <p>• The data collected will only be used for this study, and will be de-identified and anonymized before
+                analysis.<br>
+                • The data collected will be kept safely, only researchers on this study will have access to it.<br>
+                • We anticipate that your participation in this survey presents no greater risk than everyday use of the
+                Internet.<br>
+                • Please note that email communication is neither private nor secure. Though [I am/we are] taking
+                precautions to protect your privacy, you should be aware that information sent through e-mail
+                could be read by a third party.<br>
+                • De-identified data may exist on backups and server logs beyond the timeframe of this research
+                project.<br>
+                • Your confidentiality will be kept to the degree permitted by the technology being used. We
+                cannot guarantee against interception of data sent via the internet by third parties. <br>
+                Sharing De-identified Data Collected in this Research<br>
+                De-identified data from this study may be shared with the research community at large to advance science and
+                health. We will remove or code any personal information that could identify you before files are shared with
+                other researchers to ensure that, by current scientific standards and known methods, no one will be able to
+                identify you from the information we share. Despite these measures, we cannot guarantee anonymity of your
+                personal data. </p>
+            <h4>Taking part is voluntary</h4>
+            <p>Your involvement is voluntary, you may refuse to participate before the study begins, discontinue at any
+                time, or skip any questions/procedures that may make you feel uncomfortable, with no penalty to you, and no
+                effect on the compensation earned before withdrawing, or your academic standing, record, or relationship
+                with the university or other organization or service that may be involved with the research.
+                During the study, it is required for you to answer all survey or interview questions; meet a minimal
+                requirement of entries in a weekly log. You can choose not to participate if you are uncomfortable with
+                these conditions.</p>
+            <h4>Follow up studies</h4>
+            <p>We may contact you again to request your participation in a follow up study. As always, your participation
+                will be voluntary and we will ask for your explicit consent to participate in any of the follow up
+                studies. </p>
+
+            <h4>If you have questions</h4>
+            <p>The main researcher conducting this study are Siyu Yao, Yixue Wang, graduate students at Cornell University.
+                Please ask any questions you have now. If you have questions later, you may contact us at sy684@cornell.edu,
+                yw2224@cornell.edu or at 929-319-1859, 732-822-9846. If you have any questions or concerns regarding your
+                rights as a subject in this study, you may contact the Institutional Review Board (IRB) for Human
+                Participants at 607-255-5138 or access their website at http://www.irb.cornell.edu. You may also report your
+                concerns or complaints anonymously through Ethicspoint online at www.hotline.cornell.edu or by calling toll
+                free at 1-866-293-3077. Ethicspoint is an independent organization that serves as a liaison between the
+                University and the person bringing the complaint so that anonymity can be ensured.</p>
+
+            <p><b>I have read the above information, and have received answers to any questions I asked. I consent to take
+                part in the study.</b></p>
+            <a href="/auth/google"><button id="accept">Accept</button></a>
+            <button class = "button alt" id="decline" onclick="backToIndex()">Cancel</button>
         </div>
-        <div class="flex-item box">
-            <div class="image fit">
-                <img src="images/pic04.jpg" alt=""/>
-            </div>
-            <div class="content">
-                <h3>Earn 50 dollars!</h3>
-                <p>10% of the participants can get Amazon gift card worth <b>50 dollars</b>. The more you open our
-                    emails, the higher your chance!</p>
-            </div>
-        </div>
     </div>
-</section>
 
-<!-- Footer -->
-<footer id="footer">
-    <div class="inner container-fluid">
-        <h2>Join us</h2>
-        <form method="post" action="#">
-            <div class="row mt-3">
-                <div class="col-sm-6">
-                    <input class="with-margin" type="text" name="name" id="name" value="" placeholder="Name"/>
-                </div>
-                <div class="col-sm-6">
-                    <input class="with-margin" type="email" name="email" id="email" value="" placeholder="Email"/>
-                </div>
-                <!-- Break -->
-                <div class="col-sm-12">
-                    <div class="select-wrapper with-margin">
-                        <select name="youtube_usage" id="youtube_usage">
-                            <option value="">- Frequency of YouTube using-</option>
-                            <option value="1">Everyday</option>
-                            <option value="1">Over 4 times a week</option>
-                            <option value="1">1-3 times a week</option>
-                            <option value="1">Less often than once a week</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- Break -->
-                <!--<div class="col-sm-4">-->
-                    <!--<input type="radio" id="priority-low" name="priority" checked>-->
-                    <!--<label for="priority-low">Low Priority</label>-->
-                <!--</div>-->
-                <!--<div class="col-sm-4">-->
-                    <!--<input type="radio" id="priority-normal" name="priority">-->
-                    <!--<label for="priority-normal">Normal Priority</label>-->
-                <!--</div>-->
-                <!--<div class="col-sm-4">-->
-                    <!--<input type="radio" id="priority-high" name="priority">-->
-                    <!--<label for="priority-high">High Priority</label>-->
-                <!--</div>-->
-                <!-- Break -->
-                <div class="col-sm-12">
-                    <textarea class="with-margin" name="message" id="message" placeholder="Any concern or questions? Feel free to tell uw" rows="3"></textarea>
-                </div>
-                <!-- Break -->
-                <div class="col-sm-12 justify-content-md-center">
-                    <a class="actions button alt" onclick="consentShowUp()">Sign In</a>
-                </div>
-            </div>
-        </form>
-    </div>
-</footer>
 
-<!-- consent form -->
-<div id="overlay">
-    <div class="messagebox">
-        <h3>Participant consent</h3>
-        <p>We are asking you to participate in a research study titled “Intention-aware Recommendation System on
-            YouTube”. We will describe this study to you and answer any of your questions. This study is being led by
-            Siyu Yao, Yixue Wang, Longqi Yang, Hongyi Wen, Department of Computer Science at Cornell University. The
-            Faculty Advisor for this study is Deborah Estrin, Michael Sobolev, Department of Computer Science at Cornell
-            University.</p>
-        <h4>What you need to do to participate:</h4>
-        <p>The whole process will be conducted online. The process includes:<br>
-            1. Online surveys with an interval of 3 months in between<br>
-            2. Update of YouTube takeout data of your account (downloaded from YouTube takeout website) <br>
-            3. Two to three months of continuous emails with our recommended YouTube videos.</p>
-        <h4>Risks and discomforts</h4>
-        <p>We do not anticipate any risks from participating in this research.</p>
-        <h4>Benefits</h4>
-        <p>Through this study, we hope to learn more about video recommender systems. Information from this study may
-            contribute to better recommendation mechanisms, thus benefit you and other people regarding online content
-            consuming experience.</p>
-        <h4>Compensation for participation</h4>
-        <p>There is a chance of getting a 50-dollar gift card by the end of the study. The probability of getting the
-            reward is based on the 'tickets' you gain in the study.
-            By uploading your youtube takeout package and fill in the questionnaire, you can get 5 lottery tickets. And
-            every time you open an email with our recommended videos, you can get 1 lottery ticket.
-        <h4>Privacy/Confidentiality/Data Security</h4>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../public/assets/js/ie10-viewport-bug-workaround.js"></script>
 
-        <p>• The data collected will only be used for this study, and will be de-identified and anonymized before
-            analysis.<br>
-            • The data collected will be kept safely, only researchers on this study will have access to it.<br>
-            • We anticipate that your participation in this survey presents no greater risk than everyday use of the
-            Internet.<br>
-            • Please note that email communication is neither private nor secure. Though [I am/we are] taking
-            precautions to protect your privacy, you should be aware that information sent through e-mail
-            could be read by a third party.<br>
-            • De-identified data may exist on backups and server logs beyond the timeframe of this research
-            project.<br>
-            • Your confidentiality will be kept to the degree permitted by the technology being used. We
-            cannot guarantee against interception of data sent via the internet by third parties. <br>
-            Sharing De-identified Data Collected in this Research<br>
-            De-identified data from this study may be shared with the research community at large to advance science and
-            health. We will remove or code any personal information that could identify you before files are shared with
-            other researchers to ensure that, by current scientific standards and known methods, no one will be able to
-            identify you from the information we share. Despite these measures, we cannot guarantee anonymity of your
-            personal data. </p>
-        <h4>Taking part is voluntary</h4>
-        <p>Your involvement is voluntary, you may refuse to participate before the study begins, discontinue at any
-            time, or skip any questions/procedures that may make you feel uncomfortable, with no penalty to you, and no
-            effect on the compensation earned before withdrawing, or your academic standing, record, or relationship
-            with the university or other organization or service that may be involved with the research.
-            During the study, it is required for you to answer all survey or interview questions; meet a minimal
-            requirement of entries in a weekly log. You can choose not to participate if you are uncomfortable with
-            these conditions.</p>
-        <h4>Follow up studies</h4>
-        <p>We may contact you again to request your participation in a follow up study. As always, your participation
-            will be voluntary and we will ask for your explicit consent to participate in any of the follow up
-            studies. </p>
-
-        <h4>If you have questions</h4>
-        <p>The main researcher conducting this study are Siyu Yao, Yixue Wang, graduate students at Cornell University.
-            Please ask any questions you have now. If you have questions later, you may contact us at sy684@cornell.edu,
-            yw2224@cornell.edu or at 929-319-1859, 732-822-9846. If you have any questions or concerns regarding your
-            rights as a subject in this study, you may contact the Institutional Review Board (IRB) for Human
-            Participants at 607-255-5138 or access their website at http://www.irb.cornell.edu. You may also report your
-            concerns or complaints anonymously through Ethicspoint online at www.hotline.cornell.edu or by calling toll
-            free at 1-866-293-3077. Ethicspoint is an independent organization that serves as a liaison between the
-            University and the person bringing the complaint so that anonymity can be ensured.</p>
-
-        <p><b>I have read the above information, and have received answers to any questions I asked. I consent to take
-            part in the study.</b></p>
-        <a href="/auth/google"><button id="accept">Accept</button></a>
-        <button class = "button alt" id="decline" onclick="backToIndex()">Cancel</button>
-    </div>
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-    window.onload = function(){
-        console.log(document.getElementById("signinbox").style.display)
-    }
-    function loginFormShowup() {
-        var x = document.getElementById("signinbox");
-        console.log(typeof x)
-        console.log(x.style.display);
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
+    <script>
+        // window.onload = function () {
+        //     var notification = document.querySelector("#overlay");
+        //     notification.style.visibility = "hidden";
+        // };
+        function consentShowUp() {
+            var notification = document.querySelector("#overlay");
+            notification.style.visibility = "visible";
         }
-    }
-</script>
-<script>
-    // window.onload = function () {
-    //     var notification = document.querySelector("#overlay");
-    //     notification.style.visibility = "hidden";
-    // };
-    function consentShowUp() {
-        var notification = document.querySelector("#overlay");
-        notification.style.visibility = "visible";
-    }
-    function acceptConsent() {
-        document.querySelector("#overlay").style.visibility = "hidden";
-        window.location.href = "generic.html";
-    };
-    function backToIndex() {
-        document.querySelector("#overlay").style.visibility = "hidden";
-        window.location.href = "index.html";
-    };
-</script>
+        function acceptConsent() {
+            document.querySelector("#overlay").style.visibility = "hidden";
+            window.location.href = "generic.html";
+        };
+        function backToIndex() {
+            document.querySelector("#overlay").style.visibility = "hidden";
+            window.location.href = "index.html";
+        };
+    </script>
 
 
-</body>
+  </body>
 </html>
