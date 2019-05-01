@@ -27,6 +27,9 @@ passport.use(new GoogleStrategy({
 }, function(request, accessToken, refreshToken, profile, done) {
     console.log("accessToken");
     console.log(accessToken);
+    console.log("refreshToken");
+    console.log(refreshToken);
+    // console.log(request);
     User.findOne({googleId: profile.id}, function(err, user) {
         if(user) {
             console.log("user is:", user);
@@ -42,6 +45,19 @@ passport.use(new GoogleStrategy({
             });
         }
     });
+}));
+
+
+passport.use('google-drive', new GoogleStrategy({
+    // consumerKey: "1021222270760-o4opjt5b9ejea92voiiblnaoevfjoelo.apps.googleusercontent.com",
+    // consumerSecret: "HAqFrTAPazqpThcmhbEme_Xw",
+    clientID:     keys.google.clientID,
+    clientSecret: keys.google.clientSecret,
+    callbackURL: "/auth/drive/callback",
+}, function(request, accessToken, refreshToken, profile, done) {
+    console.log("access Token!!!");
+    console.log(accessToken);
+    done(null, refreshToken);
 }));
 
 
