@@ -31,13 +31,147 @@
 	                <li>Intention</li>
 	                <li>Finished!</li>
 	            </ul>
+
 	            <!-- fieldsets -->
 	            <fieldset>
 	                <h2 class="fs-title">Basic Information</h2>
 	                <h3 class="fs-subtitle">Tell us something more about you</h3>
-	                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrmlaowthFAHdGT5t9tkovK-KXHYwb2GYNhaPcffMRbEVilw/viewform?embedded=true" width="1000" height="2667" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-	                <input type="button" name="next" class="next action-button" value="Next"/>
+	                
+					  <div class="form-group">
+					    <label>Preferred name</label>
+					    <textarea class="form-control" id="preferredName" rows="1"></textarea>
+					  </div>
+
+					  <div class="form-group">
+					    <label>According to your estimation, how often do you visit YouTube?</label>
+					    <select multiple class="form-control" id="visitFrequency">
+					      <option>3-5 times a week</option>
+					      <option>6-10 times a week</option>
+					      <option>11-15 times a week</option>
+					      <option>More than 15 times a week</option>
+					    </select>
+					  </div>
+
+					  <div class="form-group">
+					    <label>Why do you goto YouTube? (Please select all that apply)</label>
+					    <div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="purposeEntertain">Entertainment</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="puposeKillTime">Kill Time</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="purposeWatchNews">Wacth News</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="purposeBuildSkills">Build skills</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="purposeTrendyInfo">Get trendy information</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="purposeExplore">Explore different things</label>
+						</div>
+					  </div>
+
+					  <div class="form-group">
+					    <label>How do you feel the recommendation system of YouTube?</label>
+					    <select multiple class="form-control" id="feelAboutYoutubeRec">
+					      <option>They are exactly what I want</option>
+					      <option>They are somewhat related to what I want</option>
+					      <option>They are not very related to what I want</option>
+					      <option>They are mostly unrelated</option>
+					    </select>
+					  </div>
+
+					  <div class="form-group">
+					    <label>How often do you watch the related videos recommended by YouTube after the end of one video?</label>
+					    <select multiple class="form-control" id="recWatchFrequency">
+					      <option>Almost always</option>
+					      <option>Very often</option>
+					      <option>Sometime</option>
+					      <option>Seldom</option>
+					    </select>
+					  </div>
+
+					  <div class="form-group">
+					    <label>When do you prefer to receive the recommended videos? (Please select all that apply)</label>
+					    <div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="timeSlot1">Early morning (6am - 9am)</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="timeSlot2">Before noon (9am - 11am)</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="timeSlot3">Noon (11am - 2pm)</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="timeSlot4">Afternoon (2pm-5pm)</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="timeSlot5">Evening (5pm-7pm)</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="timeSlot6">Night (7pm - 10pm)</label>
+						</div>
+						<div class="form-check form-check-inline">
+						  <label class="checkbox-inline">
+					      <input type="checkbox" id="timeSlot6">Late night (10pm - 12am)</label>
+						</div>
+					  </div>
+
+
+					<div class="form-group">
+					    <label>What is your occupation? (Optional)</label>
+					    <select class="form-control" id="occupation">
+					    	<option selected>Choose...</option>
+					    	<option>Architecture and Engineering</option>
+					    	<option>Arts, Design, Entertainment, Sports, and Media</option>
+					    	<option>Business and Financial Operations</option>
+					    	<option>Community and Social Service</option>
+					    	<option>Computer and Mathematical</option>
+					    	<option>Education, Training, and Library</option>
+					    	<option>Farming, Fishing, and Forestry</option>
+					    	<option>Food Preparation and Serving Related</option>
+					    	<option>Healthcare Practitioners</option>
+					    	<option>Life, Physical, and Social Science</option>
+					    	<option>Management</option>
+					    	<option>Mechanical and Repair Technology</option>
+					    	<option>Legal</option>
+					    	<option>Sales and Related</option>
+					    	<option>Transportation and Distribution</option>
+					    	<option>Rather not to tell</option>
+					    </select>
+					  </div>
+
+
+					<div class="form-group">
+					    <label>How would you describe your political attitude? (Optional) </label>
+					    <select multiple class="form-control" id="politicalAttitude">
+					      <option>Liberal</option>
+					      <option>Slightly more liberal</option>
+					      <option>Moderate</option>
+					      <option>Slightly more conservative</option>
+					      <option>Conservative</option>
+					      <option>Rather not to tell</option>
+					    </select>
+					  </div>
+
+	                <input type="button" name="next" class="next action-button" id="infoNext" value="Next"/>
 	            </fieldset>
+
 	            <fieldset>
 	                <h2 class="fs-title">Previous take-out</h2>
 	                <h3 class="fs-subtitle">Your YouTube history of last 3 months</h3>
@@ -59,12 +193,13 @@
 	                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
 	                <input type="button" name="next" class="next action-button" value="Next"/>
 	            </fieldset>
+	            
 	            <fieldset>
 	                <h2 class="fs-title">What topics do you want to explore?<br> Please select 3-10 options</h2>
-		             <div>
-						  <div class="col-sm-4 form-check form-check-inline">
-						    <label class="checkbox-inline form-check-label">
-						      <input class="form-check-input" type="checkbox" id="intendOpt1">Education</label>
+		             <div class = "row">
+						  <div class="col-sm-4">
+						    <label class="checkbox-inline">
+						      <input type="checkbox" id="intendOpt1">Education</label>
 						  </div>
 						  <div class="col-sm-4">
 						    <label class="checkbox-inline">
@@ -139,11 +274,12 @@
 	                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
 	                <input type="button" name="next" class="next action-button" id="intentionNext" value="Next"/>
 	            </fieldset>
+	        	
 	        	<fieldset>
 	                <h2 class="fs-title">What topics do you watched on YouTube recently?<br> Please select 3-10 options</h2>
-		             <div>
-						  <div class="col-sm-4 form-check form-check-inline">
-						    <label class="checkbox-inline form-check-label">
+		             <div class="row">
+						  <div class="col-sm-4 ">
+						    <label class="checkbox-inline">
 						      <input type="checkbox" vid="memOpt1">Education</label>
 						  </div>
 						  <div class="col-sm-4">
@@ -240,6 +376,15 @@
 <script src="/assets/js/main.js"></script>
 
 <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+
+<script type="text/javascript">
+	$("#infoNext").click(function(){
+		var preferredName = $('textarea#preferredName').val();
+		console.log(preferredName);
+		var visitFrequency = $('select#visitFrequency').
+	});
+</script>
+
 <script type="text/javascript">
 	var stop_flag = 0;
 	$("#intentionNext").click(function(){
