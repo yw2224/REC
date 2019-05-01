@@ -1,25 +1,21 @@
 
-<!DOCTYPE HTML>
-<!--
-    Intensify by TEMPLATED
-    templated.co @templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Personal info</title>
-    <meta charset="utf-8"/>
+	<title>Personal info</title>
+	<meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/main.css"/>
-    <link rel="stylesheet" href="assets/css/progress.css"/>
+    <link rel="stylesheet" href="../public/assets/css/progress.css"/>
 </head>
-<body class="subpage">
 
+<<<<<<< HEAD
 <!-- Header -->
 <header id="header">
     <nav class="left">
@@ -30,383 +26,232 @@
         <a href="/auth/drive" class="button alt"><%= user.username %></a>
     </nav>
 </header>
+=======
+<body>
+	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+		<a class="navbar-brand" href="#">Video Rec for Good</a>
+	</nav>
+>>>>>>> 1555cbd861fecd84277ef1ad03cb121040509af2
 
-<!-- MultiStep Form -->
-<div class="row">
-    <div class="col-md-12 col-md-offset-3">
-        <form id="msform">
-            <!-- progressbar -->
-            <ul id="progressbar">
-                <li class="active">First Survey</li>
-                <li>Previous Take-out</li>
-                <li>Memory</li>
-                <li>Intention</li>
-                <li>Finished!</li>
-            </ul>
-            <!-- fieldsets -->
-            <fieldset>
-                <h2 class="fs-title">Basic Information</h2>
-                <h3 class="fs-subtitle">Tell us something more about you</h3>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrmlaowthFAHdGT5t9tkovK-KXHYwb2GYNhaPcffMRbEVilw/viewform?embedded=true" width="1000" height="2667" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-                <input type="button" name="next" class="next action-button" value="Next"/>
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">Previous take-out</h2>
-                <h3 class="fs-subtitle">Your YouTube history of last 3 months</h3>
-                <ol style="color: #FFFFFF;">
-                    <li>Visit <a href="https://takeout.google.com/settings/takeout/custom/youtube">YouTube Takeout
-                        Website</a> and sign in with your google account
-                    </li>
-                    <li>Select include all kinds of data and press ‘Next step’.</li>
-                    <li>Customize archive format to .zip with 2GB size and press “Create Archive”</li>
-                    <li>Upload the zip file</li>
-                </ol>
-                <div class="input-group mb-3">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                    </div>
-                </div>
-                <!--<input type="file" name="pic" accept="image/*">-->
-                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="button" name="next" class="next action-button" value="Next"/>
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">What topics do you watched on YouTube recently?</h2>
-<!--                <div class="row with-margin">-->
-<!--                    &lt;!&ndash;<div class="col">&ndash;&gt;-->
-<!--                        &lt;!&ndash;<label class="image-checkbox">&ndash;&gt;-->
-<!--                            &lt;!&ndash;<img class="img-responsive" src="images/pic01.jpg"/>&ndash;&gt;-->
-<!--                            &lt;!&ndash;<input type="checkbox" name="image[]" value=""/>&ndash;&gt;-->
-<!--                            &lt;!&ndash;<i class="fa fa-check hidden"></i>&ndash;&gt;-->
-<!--                        &lt;!&ndash;</label>&ndash;&gt;-->
-<!--                    &lt;!&ndash;</div>&ndash;&gt;-->
-<!--                    <div class="col">-->
-<!--                        <input class="form-check-input" type="checkbox" value="" id="memOpt1">-->
-<!--                        <label class="form-check-label" for="memOpt1">-->
-<!--                            Auto & Vehicles-->
-<!--                        </label>-->
-<!--                    </div>-->
-<!--                    <div class="col">-->
-<!--                        <input class="form-check-input" type="checkbox" value="" id="memOpt2">-->
-<!--                        <label class="form-check-label" for="memOpt2">-->
-<!--                            Beauty & Fashion-->
-<!--                        </label>-->
-<!--                    </div>-->
-<!--                    <div class="col">-->
-<!--                        <input class="form-check-input" type="checkbox" value="" id="memOpt3">-->
-<!--                        <label class="form-check-label" for="memOpt3">-->
-<!--                            Comedy-->
-<!--                        </label>-->
-<!--                    </div>-->
+	<!-- MultiStep Form -->
+	<div class="row">
+	    <div class="col-md-12">
+	        <form id="msform">
+	            <!-- progressbar -->
+	            <ul id="progressbar">
+	                <li class="active">First Survey</li>
+	                <li>Previous Take-out</li>
+	                <li>Memory</li>
+	                <li>Intention</li>
+	                <li>Finished!</li>
+	            </ul>
+	            <!-- fieldsets -->
+	            <fieldset>
+	                <h2 class="fs-title">Basic Information</h2>
+	                <h3 class="fs-subtitle">Tell us something more about you</h3>
+	                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfrmlaowthFAHdGT5t9tkovK-KXHYwb2GYNhaPcffMRbEVilw/viewform?embedded=true" width="1000" height="2667" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+	                <input type="button" name="next" class="next action-button" value="Next"/>
+	            </fieldset>
+	            <fieldset>
+	                <h2 class="fs-title">Previous take-out</h2>
+	                <h3 class="fs-subtitle">Your YouTube history of last 3 months</h3>
+	                <ol style="color: #343434;">
+	                    <li>Visit <a href="https://takeout.google.com/settings/takeout/custom/youtube">YouTube Takeout
+	                        Website</a> and sign in with your google account
+	                    </li>
+	                    <li>Select include all kinds of data and press ‘Next step’.</li>
+	                    <li>Customize archive format to .zip with 2GB size and press “Create Archive”</li>
+	                    <li>Upload the zip file</li>
+	                </ol>
+	                <div class="input-group mb-3">
+	                    <div class="custom-file">
+	                        <input type="file" class="custom-file-input" id="inputGroupFile01">
+	                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+	                    </div>
+	                </div>
+	                <!--<input type="file" name="pic" accept="image/*">-->
+	                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+	                <input type="button" name="next" class="next action-button" value="Next"/>
+	            </fieldset>
+	            <fieldset>
+	                <h2 class="fs-title">What topics do you want to explore?<br> Please select 3-10 options</h2>
+		             <div>
+						  <div class="col-sm-4 form-check form-check-inline">
+						    <label class="checkbox-inline form-check-label">
+						      <input class="form-check-input" type="checkbox" value="Mesmer" id="memOpt1">Education</label>
+						  </div>
+						  <div class="col-sm-4">
+						    <label class="checkbox-inline">
+						      <input type="checkbox" value="Guardian" name="Checkbox[]">Entertainment</label>
+						  </div>
+						  <div class="col-sm-4">
+						    <label class="checkbox-inline">
+						      <input type="checkbox" value="Necromancer" name="Checkbox[]">Family</label>
+						  </div>
+					</div>
 
-<!--                </div>-->
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt4">
-                        <label class="form-check-label" for="memOpt4">
-                            Education
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt5">
-                        <label class="form-check-label" for="memOpt5">
-                            Entertainment
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt6">
-                        <label class="form-check-label" for="memOpt6">
-                            Family Entertainment
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt7">
-                        <label class="form-check-label" for="memOpt7">
-                            Film & Animation
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt8">
-                        <label class="form-check-label" for="memOpt8">
-                            Food
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt9">
-                        <label class="form-check-label" for="memOpt9">
-                            Gaming
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt10">
-                        <label class="form-check-label" for="memOpt10">
-                            How-to & Style
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt11">
-                        <label class="form-check-label" for="memOpt11">
-                            Music
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt12">
-                        <label class="form-check-label" for="memOpt12">
-                            News & Politics
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt13">
-                        <label class="form-check-label" for="memOpt13">
-                            Nonprofits & Activism
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt14">
-                        <label class="form-check-label" for="memOpt14">
-                            People & Blogs
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt15">
-                        <label class="form-check-label" for="memOpt15">
-                            Pets & Animals
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt16">
-                        <label class="form-check-label" for="memOpt16">
-                            Science & Technology
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt17">
-                        <label class="form-check-label" for="memOpt17">
-                            Sports
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="memOpt18">
-                        <label class="form-check-label" for="memOpt18">
-                            Travel & Events
-                        </label>
-                    </div>
-                </div>
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Ranger" name="Checkbox[]">Film & animation</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Elementalist" name="Checkbox[]">Animals</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Warrior" name="Checkbox[]">Food</label>
+					  </div>
+					</div>
 
-                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="button" name="next" class="next action-button" value="Next"/>
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">What do you want to explore recently?</h2>
-                <!--<h3 class="fs-subtitle">Fill in your credentials</h3>-->
-                <!--<form>-->
-                <div class="row with-margin">
-                    <div class="col">
-                        <label class="image-checkbox">
-                            <img class="img-responsive" src="images/Music.jpeg"/>
-                            <input type="checkbox" name="image[]" value=""/>
-                            <!--<i class="fa fa-check hidden"></i>-->
-                        </label>
-                    </div>
-                    <div class="col">
-                        <label class="image-checkbox">
-                            <img class="img-responsive" src="images/Animal.jpeg"/>
-                            <input type="checkbox" name="image[]" value=""/>
-                            <!--<i class="fa fa-check hidden"></i>-->
-                        </label>
-                    </div>
-                    <div class="col">
-                        <label class="image-checkbox">
-                            <img class="img-responsive" src="images/How-to.jpeg"/>
-                            <input type="checkbox" name="image[]" value=""/>
-                            <!--<i class="fa fa-check hidden"></i>-->
-                        </label>
-                    </div>
-                    <div class="col">
-                        <label class="image-checkbox">
-                            <img class="img-responsive" src="images/Beauty.jpeg"/>
-                            <input type="checkbox" name="image[]" value=""/>
-                            <!--<i class="fa fa-check hidden"></i>-->
-                        </label>
-                    </div>
-                    <div class="col">
-                        <label class="image-checkbox">
-                            <img class="img-responsive" src="images/Family.jpeg"/>
-                            <input type="checkbox" name="image[]" value=""/>
-                            <!--<i class="fa fa-check hidden"></i>-->
-                        </label>
-                    </div>
-                    <div class="col">
-                        <label class="image-checkbox">
-                            <img class="img-responsive" src="images/Auto.jpeg"/>
-                            <input type="checkbox" name="image[]" value=""/>
-                            <!--<i class="fa fa-check hidden"></i>-->
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <!--<div class="col">-->
-                        <!--<label class="image-checkbox">-->
-                            <!--<img class="img-responsive" src="images/pic01.jpg"/>-->
-                            <!--<input type="checkbox" name="image[]" value=""/>-->
-                            <!--<i class="fa fa-check hidden"></i>-->
-                        <!--</label>-->
-                    <!--</div>-->
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt1">
-                        <label class="form-check-label" for="intentOpt1">
-                            Auto & Vehicles
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt2">
-                        <label class="form-check-label" for="intentOpt2">
-                            Beauty & Fashion
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt3">
-                        <label class="form-check-label" for="intentOpt3">
-                            Comedy
-                        </label>
-                    </div>
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Thief" name="Checkbox[]">Gaming</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Engineer" name="Checkbox[]">How-to & Style</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Revenant" name="Checkbox[]">Music</label>
+					  </div>
+					</div>
 
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt4">
-                        <label class="form-check-label" for="intentOpt4">
-                            Education
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt5">
-                        <label class="form-check-label" for="intentOpt5">
-                            Entertainment
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt6">
-                        <label class="form-check-label" for="intentOpt6">
-                            Family Entertainment
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt7">
-                        <label class="form-check-label" for="intentOpt7">
-                            Film & Animation
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt8">
-                        <label class="form-check-label" for="intentOpt8">
-                            Food
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt9">
-                        <label class="form-check-label" for="intentOpt9">
-                            Gaming
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt10">
-                        <label class="form-check-label" for="intentOpt10">
-                            How-to & Style
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt11">
-                        <label class="form-check-label" for="intentOpt11">
-                            Music
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt12">
-                        <label class="form-check-label" for="intentOpt12">
-                            News & Politics
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt13">
-                        <label class="form-check-label" for="intentOpt13">
-                            Nonprofits & Activism
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt14">
-                        <label class="form-check-label" for="intentOpt14">
-                            People & Blogs
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt15">
-                        <label class="form-check-label" for="intentOpt15">
-                            Pets & Animals
-                        </label>
-                    </div>
-                </div>
-                <div class="row with-margin">
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt16">
-                        <label class="form-check-label" for="intentOpt16">
-                            Science & Technology
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt17">
-                        <label class="form-check-label" for="intentOpt17">
-                            Sports
-                        </label>
-                    </div>
-                    <div class="col">
-                        <input class="form-check-input" type="checkbox" value="" id="intentOpt18">
-                        <label class="form-check-label" for="intentOpt18">
-                            Travel & Events
-                        </label>
-                    </div>
-                </div>
-                <!--</form>-->
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Thief" name="Checkbox[]">News & Politics</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Engineer" name="Checkbox[]">Nonprofits & Activism</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Revenant" name="Checkbox[]">Science & Technology</label>
+					  </div>
+					</div>
 
-<!--                <h2 class="fs-title">Experiment Phase</h2>-->
-<!--                <h3 class="fs-subtitle">You have checked out 23 emails! You can precede to next step after 29 days!</h3>-->
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Thief" name="Checkbox[]">People & Blogs</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Engineer" name="Checkbox[]">Sports</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Revenant" name="Checkbox[]">Travel & Events</label>
+					  </div>
+					</div>
 
-<!--                <input type="text" name="suggestion" placeholder="Anything to tell us?"/>-->
-<!--                &lt;!&ndash;<input type="password" name="pass" placeholder="Password"/>&ndash;&gt;-->
-<!--                &lt;!&ndash;<input type="password" name="cpass" placeholder="Confirm Password"/>&ndash;&gt;-->
-<!--                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>-->
-<!--                <input type="button" name="Suggestion" class="button action-button-previous" value="Submit">-->
-<!--                <input type="button" name="next" class="next action-button" value="Next" disabled>-->
-            </fieldset>
+	                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+	                <input type="button" name="next" class="next action-button" value="Next"/>
+	            </fieldset>
+	        	<fieldset>
+	                <h2 class="fs-title">What topics do you watched on YouTube recently?<br> Please select 3-10 options</h2>
+		             <div>
+						  <div class="col-sm-4 form-check form-check-inline">
+						    <label class="checkbox-inline form-check-label">
+						      <input class="form-check-input" type="checkbox" value="Mesmer" id="memOpt1">Education</label>
+						  </div>
+						  <div class="col-sm-4">
+						    <label class="checkbox-inline">
+						      <input type="checkbox" value="Guardian" name="Checkbox[]">Entertainment</label>
+						  </div>
+						  <div class="col-sm-4">
+						    <label class="checkbox-inline">
+						      <input type="checkbox" value="Necromancer" name="Checkbox[]">Family</label>
+						  </div>
+					</div>
+
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Ranger" name="Checkbox[]">Film & animation</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Elementalist" name="Checkbox[]">Animals</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Warrior" name="Checkbox[]">Food</label>
+					  </div>
+					</div>
+
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Thief" name="Checkbox[]">Gaming</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Engineer" name="Checkbox[]">How-to & Style</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Revenant" name="Checkbox[]">Music</label>
+					  </div>
+					</div>
+
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Thief" name="Checkbox[]">News & Politics</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Engineer" name="Checkbox[]">Nonprofits & Activism</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Revenant" name="Checkbox[]">Science & Technology</label>
+					  </div>
+					</div>
+
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Thief" name="Checkbox[]">People & Blogs</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Engineer" name="Checkbox[]">Sports</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input type="checkbox" value="Revenant" name="Checkbox[]">Travel & Events</label>
+					  </div>
+					</div>
+
+	                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+	                <input type="button" name="next" class="next action-button" value="Next"/>
+	            </fieldset>
+	            <fieldset>
+	            	<h2>Congratualations! You are all set!</h2>
+	                <h4>Hope you will enjoy our recommendations</h4>
+	                <h4>The more often you open our emails, the higher chance of the reward!</h4>
+		  
+	            </fieldset>
+
+	        </form>
+	    </div>
+	</div>
+	<!-- /.MultiStep Form -->
 
 
-        </form>
-    </div>
-</div>
-<!-- /.MultiStep Form -->
 
-<!-- Scripts -->
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="../public/assets/js/jquery.min.js"></script>
+<script src="../public/assets/js/jquery.scrolly.min.js"></script>
+<script src="../public/assets/js/skel.min.js"></script>
+<script src="../public/assets/js/util.js"></script>
+<script src="../public/assets/js/main.js"></script>
 
 <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 
@@ -518,7 +363,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
     // upload file name appears in the box
     // Add the following code if you want the name of the file appear on select
     window.onload = function () {
@@ -529,27 +374,7 @@
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
-</script>
+</script> -->
 
-<script>
-    // for image gallery
-    // image gallery
-    // init the state from the input
-    $(".image-checkbox").each(function () {
-        if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-            $(this).addClass('image-checkbox-checked');
-        }
-        else {
-            $(this).removeClass('image-checkbox-checked');
-        }
-    });
-    // sync the state to the input
-    $(".image-checkbox").on("click", function (e) {
-        $(this).toggleClass('image-checkbox-checked');
-        var $checkbox = $(this).find('input[type="checkbox"]');
-        $checkbox.prop("checked", !$checkbox.prop("checked"))
-        e.preventDefault();
-    });
-</script>
 </body>
 </html>
