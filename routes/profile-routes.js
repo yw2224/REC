@@ -5,6 +5,7 @@ const bodyParser            = require("body-parser");
 const User                  = require("../models/user");
 const Takeout = require("../models/takeout");
 const fs = require("fs");
+var flash        = require('connect-flash');
 
 const authCheck = function(req, res, next) {
     if(!req.user) {
@@ -22,6 +23,7 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 
 router.use(bodyParser.text());
+router.use(flash());
 
 router.post("/upload/local", authCheck, function(req, res) {
     var src = req.body.filename;
@@ -91,8 +93,46 @@ router.post("/upload", authCheck, function(req, res){
     var fileId = content.docID; //'1ZdR3L3qP4Bkq8noWLJHSr_iBau0DNT4Kli4SxNc2YEo';
     var fileURL = content.docURL;
 
-    const dest = fs.createWriteStream('../out.png');
-    runSample(drive, fileId);
+    var filePath = "./out";
+    const dest = fs.createWriteStream(filePath);
+    let progress = 0;
+    // For converting document formats, and for downloading template
+    // documents, see the method drive.files.export():
+    // https://developers.google.com/drive/api/v3/manage-downloads
+    const result = drive.files.get(
+      {auth: oAuth2Client, fileId: fileId, alt: 'media'},
+      {responseType: 'stream'}
+  , function(err, res) {
+      console.log(res);
+      console.log(typeof res);
+      console.log(res.data);
+      console.log(typeof res.data.buffer);
+      res.data
+        .on('end', () => {
+          console.log('Done downloading file.');
+          // resolve(filePath);
+        })
+        .on('error', err => {
+          console.error('Error downloading file.');
+          // reject(err);
+        })
+        .on('data', d => {
+          progress += d.length;
+          if (process.stdout.isTTY) {
+            process.stdout.clearLine();
+            process.stdout.cursorTo(0);
+            process.stdout.write(`Downloaded ${progress} bytes`);
+          }
+        })
+        .pipe(dest);
+  });
+
+
+
+
+
+    // const dest = fs.createWriteStream('../out.png');
+    // runSample(drive, fileId);
     // var dest = fs.createWriteStream('../out.png');
     // drive.files.get({
     //     auth: oAuth2Client,
@@ -139,7 +179,7 @@ router.post("/upload", authCheck, function(req, res){
     //             takeout.save();
     //             // user.takeout_1 = takeout;
     //             // user.save();
-    //
+    //             console.log("Successfully saved.");
     //         });
     //         // console.log(req.body.data);
     //
