@@ -6,11 +6,14 @@ const {google} = require('googleapis');
 router.get('/google', passport.authenticate('google', {
     accessType: 'offline',
     prompt: 'consent',
-    scope: ['profile', 'https://www.googleapis.com/auth/drive.file']
+    scope: ['profile'] //, 'https://www.googleapis.com/auth/drive.file']
 }));
 
 router.get('/google/callback', passport.authenticate('google'), function(req, res) {
     console.log(req.user);
+    console.log("you are here!");
+    console.log(req.account);
+    // var token = req.account;
       // res.send("you are here!")
       // Successful authentication, redirect home.
     res.redirect('/generic');
@@ -47,6 +50,8 @@ router.get('/drive/callback', passport.authorize('google-drive'), function(req, 
     console.log(req.account);
     var token = req.account;
     const oAuth2Client = new google.auth.OAuth2(
+        // "1021222270760-qvl1f5edlequblap7neqbld5lnr9c7rj.apps.googleusercontent.com",
+        // "zlv3lJwP2oD_x2RrzNKcEonk",
       "1021222270760-o4opjt5b9ejea92voiiblnaoevfjoelo.apps.googleusercontent.com",
       "HAqFrTAPazqpThcmhbEme_Xw",
       "/auth/google/callback"

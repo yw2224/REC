@@ -6,11 +6,18 @@ var UserSchema = new mongoose.Schema({
     payment_method: String,
     password: String,
     img: String,
-    takeout_1: String,
+    // takeout_1: String,
     takeout_2: String,
     state: Number,
     file: String,
-    googleId: String
+    googleId: String,
+    takeout_1: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Takeout"
+        },
+        content: String
+    }
 });
 
 UserSchema.plugin(passportLocalMongoose);

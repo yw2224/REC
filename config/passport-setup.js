@@ -25,10 +25,10 @@ passport.use(new GoogleStrategy({
     clientSecret: keys.google.clientSecret,
     callbackURL: "/auth/google/callback",
 }, function(request, accessToken, refreshToken, profile, done) {
-    console.log("accessToken");
-    console.log(accessToken);
-    console.log("refreshToken");
-    console.log(refreshToken);
+    // console.log("accessToken");
+    // console.log(accessToken);
+    // console.log("refreshToken");
+    // console.log(refreshToken);
     // console.log(request);
     User.findOne({googleId: profile.id}, function(err, user) {
         if(user) {
