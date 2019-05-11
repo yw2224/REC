@@ -6,7 +6,7 @@ module.exports = {
         clientSecret: "HAqFrTAPazqpThcmhbEme_Xw"
     },
     mongo: {
-        mongoURI: "mongodb://localhost/rec"
+        mongoURI: "mongodb://localhost/recommodation"
     },
     session: {
         cookieKey: "asdfghjasdfdfswerwerq"

@@ -22,7 +22,7 @@
 	<!-- MultiStep Form -->
 	<div class="row">
 	    <div class="col-md-12">
-	        <form id="msform">
+	        <form id="msform" enctype="multipart/form-data">
 	            <!-- progressbar -->
 	            <ul id="progressbar">
 	                <li class="active">First Survey</li>
@@ -187,22 +187,18 @@
 
 	                <div class="input-group mb-3">
 
-						<!-- <form method="post" action="/upload/local">
-          					<input type="file" name="filename">
-          					<input type="submit" value="Submit">
-      					</form> -->
 	                    <div class="custom-file">
-							<!-- <form method="post" action="/upload/local"> -->
 	                        	<input type="file" class="custom-file-input" id="inputGroupFile01" name="localFileName">
 	                        	<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+								<button type="button" id="submit-local-file">Upload</button>
 								<!-- <input type="submit" value="Submit"> -->
-							<!-- </form> -->
 	                    </div>
 
+						<div>or
+						</div>
 
 
-
-							<button type="button" id="auth" disabled>Authenticate</button>
+							<button type="button" id="auth" disabled>Drive</button>
 							<label id="fileFromDrive" class="custom-file-label"></label>
 						<div></div>
 	                </div>
@@ -554,26 +550,20 @@
 </script>
 
 <script type="text/javascript">
-
       // The Browser API key obtained from the Google API Console.
       var developerKey = 'AIzaSyDDK_L9y88sbUQBL8PC0wr6zYmNdAik_hw';
-
       // The Client ID obtained from the Google API Console. Replace with your own Client ID.
       var clientId = '1021222270760-o4opjt5b9ejea92voiiblnaoevfjoelo.apps.googleusercontent.com';
-
       // Scope to use to access user's photos.
       var scope = 'https://www.googleapis.com/auth/drive.file';
-
       var pickerApiLoaded = false;
       var oauthToken;
       var token;
-
       // Use the API Loader script to load google.picker and gapi.auth.
       function onApiLoad() {
         gapi.load('auth2', onAuthApiLoad);
         gapi.load('picker', onPickerApiLoad);
       }
-
       function onAuthApiLoad() {
         var authBtn = document.getElementById('auth');
         authBtn.disabled = false;
@@ -585,22 +575,18 @@
           })
         });
       }
-
       function onPickerApiLoad() {
         pickerApiLoaded = true;
         createPicker();
       }
-
       function handleAuthResult(authResult) {
         if (authResult && !authResult.error) {
             token = authResult;
             console.dir(authResult);
           oauthToken = authResult.access_token;
-
           createPicker();
         }
       }
-
       // Create and render a Picker object for picking user Photos.
       function createPicker() {
         if (pickerApiLoaded && oauthToken) {
@@ -613,7 +599,6 @@
           picker.setVisible(true);
         }
       }
-
       // A simple callback implementation.
       function pickerCallback(data) {
         var url = 'nothing';
@@ -628,12 +613,27 @@
         console.dir(doc);
         console.dir(token);
         var message = 'You picked: ' + url + "," + docID;
-
         // document.getElementById('result').innerHTML = message;
         document.getElementById('fileFromDrive').innerHTML = docID;
-
         postRequest(doc);
+
+		// printFile(docID);
       }
+
+	  function printFile(fileId) {
+		  console.log(fileId);
+		  gapi.client.load('drive', 'v3', callback);
+  		var request = gapi.client.drive.files.get({
+    		'fileId': fileId,
+			'alt': media
+  		});
+  		request.execute(function(resp) {
+			console.log(resp);
+    	console.log('Title: ' + resp.title);
+    	console.log('Description: ' + resp.description);
+    	console.log('MIME type: ' + resp.mimeType);
+  	  });
+}
 
       function postRequest(doc) {
 		  const data = JSON.stringify({
@@ -648,13 +648,22 @@
               // oauthToken: token
           });
 		  console.log(data);
-          navigator.sendBeacon('/upload', data);
+          navigator.sendBeacon('/upload/drive', data);
       }
 </script>
+
+<script type="text/javascript">
+	var form = document.getElementById("msform");
+	document.getElementById("submit-local-file").addEventListener("click", function () {
+		form.action='/upload/local';
+		form.method = "post";
+		form.submit();
+	});
+</script>
+
 <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
 
 <!-- <script>
-
     // upload file name appears in the box
     // Add the following code if you want the name of the file appear on select
     window.onload = function () {

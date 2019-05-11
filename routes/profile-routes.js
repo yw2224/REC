@@ -6,6 +6,22 @@ const User                  = require("../models/user");
 const Takeout = require("../models/takeout");
 const fs = require("fs");
 var flash        = require('connect-flash');
+var mongoose              = require("mongoose");
+var Grid = require('gridfs-stream');
+
+mongoose.connect(keys.mongo.mongoURI);
+
+
+const conn = mongoose.createConnection(keys.mongo.mongoURI);
+
+// Init gfs
+let gfs;
+
+conn.once('open', () => {
+  // Init stream
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection('uploads');
+});
 
 const authCheck = function(req, res, next) {
     if(!req.user) {
@@ -26,9 +42,10 @@ router.use(bodyParser.text());
 router.use(flash());
 
 router.post("/upload/local", authCheck, function(req, res) {
+    console.log("????");
     var src = req.body.filename;
     console.log(req.body);
-    console.log("????");
+
     var writestream = gfs.createWriteStream({
             filename: './out.png'
         });

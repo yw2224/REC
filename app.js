@@ -4,6 +4,7 @@ const express               = require("express"),
       User                  = require("./models/user"),
       authRoutes            = require("./routes/auth-routes.js"),
       profileRoutes         = require("./routes/profile-routes.js"),
+      uploadRoutes          = require("./routes/upload-routes.js")
       keys                  = require("./config/keys"),
       passport              = require("passport"),
       passportSetup         = require("./config/passport-setup.js"),
@@ -25,7 +26,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
 app.use("/auth", authRoutes);
-app.use(profileRoutes);
+app.use(uploadRoutes);
+// app.use(profileRoutes);
 
 app.get("/", function(req, res){
     res.render("index");
