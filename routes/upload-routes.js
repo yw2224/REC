@@ -190,8 +190,9 @@ router.post("/upload/drive", authCheck, function(req, res){
     // });
 
     // var dest = fs.createWriteStream('./models/uploads/test.zip');
+    var dest = bucket.openUploadStream(content.docName);
     var user = req.user;
-    var getback = res;
+    var response = res;
     drive.files.get({
         auth: oAuth2Client,
         fileId: fileId,
@@ -203,7 +204,11 @@ router.post("/upload/drive", authCheck, function(req, res){
         res.data
         .on('end', () => {
             console.log('Done');
-            return getback.status(200).json({
+            console.log(dest);
+            user.takeout1Id = dest.id;
+            user.save();
+            console.log(dest.id);
+            return response.status(200).json({
                 success: true,
                 status: 200,
                 message: "Successfully retrieved transaction",
@@ -212,7 +217,7 @@ router.post("/upload/drive", authCheck, function(req, res){
         .on('error', err => {
             console.log('Error', err);
         })
-        .pipe(bucket.openUploadStream('meistersinger.mp3'));
+        .pipe(dest);
 
         // if (err) return console.log('The API returned an error: ' + err);
         // process.stdout.write(fileName);
