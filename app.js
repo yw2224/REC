@@ -5,6 +5,7 @@ const express               = require("express"),
       authRoutes            = require("./routes/auth-routes.js"),
       profileRoutes         = require("./routes/profile-routes.js"),
       uploadRoutes          = require("./routes/upload-routes.js")
+      infoRoutes          = require("./routes/info-routes.js")
       keys                  = require("./config/keys"),
       passport              = require("passport"),
       passportSetup         = require("./config/passport-setup.js"),
@@ -23,11 +24,14 @@ app.use(passport.session());
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.json());
+// app.use(bodyParser.text());
+
 app.use(express.static(__dirname + '/public'));
 
 app.use("/auth", authRoutes);
 app.use(uploadRoutes);
-// app.use(profileRoutes);
+app.use(infoRoutes);
 
 app.get("/", function(req, res){
     res.render("index");
@@ -36,8 +40,6 @@ app.get("/", function(req, res){
 // app.get("/generic", function(req, res){
 //     res.render("generic");
 // });
-
-
 
 
 app.listen(3000, 'localhost', function(){

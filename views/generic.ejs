@@ -39,12 +39,13 @@
 
 					  <div class="form-group">
 					    <label>Preferred name</label>
-					    <textarea class="form-control" id="preferredName" rows="1"></textarea>
+					    <textarea class="form-control" type="text" id="preferredName" name="preferredName" rows="1"></textarea>
+						<!-- <input class="form-control" type="text" id="preferredName" rows="1"> -->
 					  </div>
 
 					  <div class="form-group">
 					    <label>According to your estimation, how often do you visit YouTube?</label>
-					    <select multiple class="form-control" id="visitFrequency">
+					    <select multiple class="form-control" id="visitFrequency" name="visitFrequency">
 					      <option>3-5 times a week</option>
 					      <option>6-10 times a week</option>
 					      <option>11-15 times a week</option>
@@ -56,33 +57,33 @@
 					    <label>Why do you goto YouTube? (Please select all that apply)</label>
 					    <div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="purposeEntertain">Entertainment</label>
+					      <input value="Entertainment" type="checkbox" id="purposeEntertain" name="purpose">Entertainment</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="puposeKillTime">Kill Time</label>
+					      <input value="Kill Time" type="checkbox" id="purposeKillTime" name="purpose">Kill Time</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="purposeWatchNews">Wacth News</label>
+					      <input value="Wacth News" type="checkbox" id="purposeWatchNews" name="purpose">Wacth News</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="purposeBuildSkills">Build skills</label>
+					      <input value="Build skills" type="checkbox" id="purposeBuildSkills" name="purpose">Build skills</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="purposeTrendyInfo">Get trendy information</label>
+					      <input value="Get trendy information" type="checkbox" id="purposeTrendyInfo" name="purpose">Get trendy information</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="purposeExplore">Explore different things</label>
+					      <input value="Explore different things" type="checkbox" id="purposeExplore" name="purpose">Explore different things</label>
 						</div>
 					  </div>
 
 					  <div class="form-group">
 					    <label>How do you feel the recommendation system of YouTube?</label>
-					    <select multiple class="form-control" id="feelAboutYoutubeRec">
+					    <select multiple class="form-control" id="feelAboutYoutubeRec" name="feelAboutYoutubeRec">
 					      <option>They are exactly what I want</option>
 					      <option>They are somewhat related to what I want</option>
 					      <option>They are not very related to what I want</option>
@@ -92,7 +93,7 @@
 
 					  <div class="form-group">
 					    <label>How often do you watch the related videos recommended by YouTube after the end of one video?</label>
-					    <select multiple class="form-control" id="recWatchFrequency">
+					    <select multiple class="form-control" id="recWatchFrequency" name="recWatchFrequency">
 					      <option>Almost always</option>
 					      <option>Very often</option>
 					      <option>Sometime</option>
@@ -104,38 +105,38 @@
 					    <label>When do you prefer to receive the recommended videos? (Please select all that apply)</label>
 					    <div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="timeSlot1">Early morning (6am - 9am)</label>
+					      <input value="Early morning (6am - 9am)" type="checkbox" id="timeSlot1" name="timeSlot">Early morning (6am - 9am)</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="timeSlot2">Before noon (9am - 11am)</label>
+					      <input value="Before noon (9am - 11am)" type="checkbox" id="timeSlot2" name="timeSlot">Before noon (9am - 11am)</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="timeSlot3">Noon (11am - 2pm)</label>
+					      <input value="Noon (11am - 2pm)" type="checkbox" id="timeSlot3" name="timeSlot">Noon (11am - 2pm)</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="timeSlot4">Afternoon (2pm-5pm)</label>
+					      <input value="Afternoon (2pm-5pm)" type="checkbox" id="timeSlot4" name="timeSlot">Afternoon (2pm-5pm)</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="timeSlot5">Evening (5pm-7pm)</label>
+					      <input value="Evening (5pm-7pm)" type="checkbox" id="timeSlot5" name="timeSlot">Evening (5pm-7pm)</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="timeSlot6">Night (7pm - 10pm)</label>
+					      <input value="Night (7pm - 10pm)" type="checkbox" id="timeSlot6" name="timeSlot">Night (7pm - 10pm)</label>
 						</div>
 						<div class="form-check form-check-inline">
 						  <label class="checkbox-inline">
-					      <input type="checkbox" id="timeSlot6">Late night (10pm - 12am)</label>
+					      <input value="Late night (10pm - 12am)" type="checkbox" id="timeSlot7" name="timeSlot">Late night (10pm - 12am)</label>
 						</div>
 					  </div>
 
 
 					<div class="form-group">
 					    <label>What is your occupation? (Optional)</label>
-					    <select class="form-control" id="occupation">
+					    <select class="form-control" id="occupation" name="occupation">
 					    	<option selected>Choose...</option>
 					    	<option>Architecture and Engineering</option>
 					    	<option>Arts, Design, Entertainment, Sports, and Media</option>
@@ -159,7 +160,7 @@
 
 					<div class="form-group">
 					    <label>How would you describe your political attitude? (Optional) </label>
-					    <select multiple class="form-control" id="politicalAttitude">
+					    <select multiple class="form-control" id="politicalAttitude" name="politicalAttitude">
 					      <option>Liberal</option>
 					      <option>Slightly more liberal</option>
 					      <option>Moderate</option>
@@ -189,8 +190,8 @@
 
 	                    <div class="custom-file">
 	                        	<input type="file" class="custom-file-input" id="inputGroupFile01" name="localFileName">
-	                        	<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-								<button type="button" id="submit-local-file">Upload</button>
+	                        	<!-- <label class="custom-file-label" for="inputGroupFile01">Choose file</label> -->
+								<button type="button" id="submit-local-file">Upload from your computer</button>
 								<!-- <input type="submit" value="Submit"> -->
 	                    </div>
 
@@ -198,8 +199,8 @@
 						</div>
 
 
-							<button type="button" id="auth" disabled>Drive</button>
-							<label id="fileFromDrive" class="custom-file-label"></label>
+							<button type="button" id="submit-drive-file" disabled>Upload from Google Drive</button>
+							<label id="file-from-drive" class="custom-file-label"></label>
 						<div></div>
 	                </div>
 	                <!--<input type="file" name="pic" accept="image/*">-->
@@ -212,75 +213,75 @@
 		             <div class = "row">
 						  <div class="col-sm-4">
 						    <label class="checkbox-inline">
-						      <input type="checkbox" id="intendOpt1">Education</label>
+						      <input value="Education" type="checkbox" id="intendOpt1" name="intention">Education</label>
 						  </div>
 						  <div class="col-sm-4">
 						    <label class="checkbox-inline">
-						      <input type="checkbox" id="intendOpt2">Entertainment</label>
+						      <input value="Entertainment" type="checkbox" id="intendOpt2" name="intention">Entertainment</label>
 						  </div>
 						  <div class="col-sm-4">
 						    <label class="checkbox-inline">
-						      <input type="checkbox" id="intendOpt3">Family</label>
+						      <input value="Family" type="checkbox" id="intendOpt3" name="intention">Family</label>
 						  </div>
 					</div>
 
 					<div class="row">
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt4">Film & animation</label>
+					      <input value="Film & animation" type="checkbox" id="intendOpt4" name="intention">Film & animation</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt5">Animals</label>
+					      <input value="Animals" type="checkbox" id="intendOpt5" name="intention">Animals</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt6">Food</label>
-					  </div>
-					</div>
-
-					<div class="row">
-					  <div class="col-sm-4">
-					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt7">Gaming</label>
-					  </div>
-					  <div class="col-sm-4">
-					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt8">How-to & Style</label>
-					  </div>
-					  <div class="col-sm-4">
-					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt9">Music</label>
+					      <input value="Food" type="checkbox" id="intendOpt6" name="intention">Food</label>
 					  </div>
 					</div>
 
 					<div class="row">
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt10">News & Politics</label>
+					      <input value="Gaming" type="checkbox" id="intendOpt7" name="intention">Gaming</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt11">Nonprofits & Activism</label>
+					      <input value="How-to & Style" type="checkbox" id="intendOpt8" name="intention">How-to & Style</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt12">Science & Technology</label>
+					      <input value="Music" type="checkbox" id="intendOpt9" name="intention">Music</label>
 					  </div>
 					</div>
 
 					<div class="row">
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox"  id="intendOpt13">People & Blogs</label>
+					      <input value="News & Politics" type="checkbox" id="intendOpt10" name="intention">News & Politics</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt14">Sports</label>
+					      <input value="Nonprofits & Activism" type="checkbox" id="intendOpt11" name="intention">Nonprofits & Activism</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="intendOpt15">Travel & Events</label>
+					      <input value="Science & Technology" type="checkbox" id="intendOpt12" name="intention">Science & Technology</label>
+					  </div>
+					</div>
+
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input value="People & Blogs" type="checkbox"  id="intendOpt13" name="intention">People & Blogs</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input value="Sports" type="checkbox" id="intendOpt14" name="intention">Sports</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input value="Travel & Events" type="checkbox" id="intendOpt15" name="intention">Travel & Events</label>
 					  </div>
 					</div>
 
@@ -293,75 +294,75 @@
 		             <div class="row">
 						  <div class="col-sm-4 ">
 						    <label class="checkbox-inline">
-						      <input type="checkbox" vid="memOpt1">Education</label>
+						      <input value="Education" type="checkbox" vid="memOpt1" name="memory">Education</label>
 						  </div>
 						  <div class="col-sm-4">
 						    <label class="checkbox-inline">
-						      <input type="checkbox" id="memOpt2">Entertainment</label>
+						      <input value="Entertainment" type="checkbox" id="memOpt2" name="memory">Entertainment</label>
 						  </div>
 						  <div class="col-sm-4">
 						    <label class="checkbox-inline">
-						      <input type="checkbox"id="memOpt3">Family</label>
+						      <input value="Family" type="checkbox" id="memOpt3" name="memory">Family</label>
 						  </div>
 					</div>
 
 					<div class="row">
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt4">Film & animation</label>
+					      <input value="Film & animation" type="checkbox" id="memOpt4" name="memory">Film & animation</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt5">Animals</label>
+					      <input value="Animals" type="checkbox" id="memOpt5" name="memory">Animals</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt6">Food</label>
-					  </div>
-					</div>
-
-					<div class="row">
-					  <div class="col-sm-4">
-					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt7">Gaming</label>
-					  </div>
-					  <div class="col-sm-4">
-					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt8">How-to & Style</label>
-					  </div>
-					  <div class="col-sm-4">
-					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt9">Music</label>
+					      <input value="Food" type="checkbox" id="memOpt6" name="memory">Food</label>
 					  </div>
 					</div>
 
 					<div class="row">
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt10">News & Politics</label>
+					      <input value="Gaming" type="checkbox" id="memOpt7" name="memory">Gaming</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt11">Nonprofits & Activism</label>
+					      <input value="How-to & Style" type="checkbox" id="memOpt8" name="memory">How-to & Style</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt12">Science & Technology</label>
+					      <input value="Music" type="checkbox" id="memOpt9" name="memory">Music</label>
 					  </div>
 					</div>
 
 					<div class="row">
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt13">People & Blogs</label>
+					      <input value="News & Politics" type="checkbox" id="memOpt10" name="memory">News & Politics</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt14">Sports</label>
+					      <input value="Nonprofits & Activism" type="checkbox" id="memOpt11" name="memory">Nonprofits & Activism</label>
 					  </div>
 					  <div class="col-sm-4">
 					    <label class="checkbox-inline">
-					      <input type="checkbox" id="memOpt15">Travel & Events</label>
+					      <input value="Science & Technology" type="checkbox" id="memOpt12" name="memory">Science & Technology</label>
+					  </div>
+					</div>
+
+					<div class="row">
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input value="People & Blogs" type="checkbox" id="memOpt13" name="memory">People & Blogs</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input value="Sports" type="checkbox" id="memOpt14" name="memory">Sports</label>
+					  </div>
+					  <div class="col-sm-4">
+					    <label class="checkbox-inline">
+					      <input value="Travel & Events" type="checkbox" id="memOpt15" name="memory">Travel & Events</label>
 					  </div>
 					</div>
 
@@ -393,8 +394,33 @@
 <script type="text/javascript">
 	$("#infoNext").click(function(){
 		var preferredName = $('textarea#preferredName').val();
+		// var preferredName = $('preferredName').val();
 		console.log(preferredName);
-		var visitFrequency = $('select#visitFrequency').
+
+		var vals = []
+    	$('input:checkbox[name="timeSlot"]').each(function() {
+        	if (this.checked) {
+            	vals.push(this.value);
+        	}
+    	});
+		var timeSlots = JSON.stringify({timeSlots: vals});
+
+		vals = []
+		$('input:checkbox[name="purpose"]').each(function() {
+        	if (this.checked) {
+            	vals.push(this.value);
+        	}
+    	});
+		purposes = JSON.stringify({purposes: vals});
+
+		var form = document.getElementById("msform");
+		var formdata = new FormData(form);
+		formdata.append('timeSlots', timeSlots);
+		formdata.append('purposes', purposes);
+
+		var request = new XMLHttpRequest();
+		request.open("POST", "/upload/info");
+		request.send(formdata);
 	});
 </script>
 
@@ -417,6 +443,23 @@
 		else{
 			stop_flag = 0;
 		}
+
+		vals = []
+		$('input:checkbox[name="intention"]').each(function() {
+        	if (this.checked) {
+            	vals.push(this.value);
+        	}
+    	});
+		intentions = JSON.stringify({intentions: vals});
+
+		var form = document.getElementById("msform");
+		var formdata = new FormData(form);
+		formdata.append('intentions', intentions);
+
+		var request = new XMLHttpRequest();
+		request.open("POST", "/upload/intention");
+		request.send(formdata);
+
 	});
 </script>
 
@@ -438,6 +481,22 @@
 		else{
 			stop_flag = 0;
 		}
+
+		vals = []
+		$('input:checkbox[name="memory"]').each(function() {
+        	if (this.checked) {
+            	vals.push(this.value);
+        	}
+    	});
+		memories = JSON.stringify({memories: vals});
+
+		var form = document.getElementById("msform");
+		var formdata = new FormData(form);
+		formdata.append('memories', memories);
+
+		var request = new XMLHttpRequest();
+		request.open("POST", "/upload/memory");
+		request.send(formdata);
 	});
 </script>
 
@@ -565,7 +624,7 @@
         gapi.load('picker', onPickerApiLoad);
       }
       function onAuthApiLoad() {
-        var authBtn = document.getElementById('auth');
+        var authBtn = document.getElementById('submit-drive-file');
         authBtn.disabled = false;
         authBtn.addEventListener('click', function() {
           gapi.auth2.init({ client_id: clientId }).then(function(googleAuth) {
@@ -614,7 +673,7 @@
         console.dir(token);
         var message = 'You picked: ' + url + "," + docID;
         // document.getElementById('result').innerHTML = message;
-        document.getElementById('fileFromDrive').innerHTML = docID;
+        document.getElementById('file-from-drive').innerHTML = docID;
         postRequest(doc);
 
 		// printFile(docID);
@@ -657,8 +716,49 @@
 	document.getElementById("submit-local-file").addEventListener("click", function () {
 		form.action='/upload/local';
 		form.method = "post";
-		form.submit();
+		form.enctype="multipart/form-data";
+		var formdata = new FormData(form);
+		// form.submit();
+		// console.log("????");
+		var request = new XMLHttpRequest();
+		request.open("POST", "/upload/local");
+		request.send(formdata);
+		console.log("asdfsdfs");
+		request.onreadystatechange = function(){
+            // alert("onreadystatechange: " + request.readyState );
+            if ( request.readyState === 4 && request.status === 200) {
+                alert ("success! responseText: " + request.responseText);
+            } else {
+				alert("fail");
+			}
+        };
+
+		console.log(request.responseText);
+
+		// form.submit(function(e) {
+		// 	// e.preventDefault();
+		// 	console.log("haaaaha");
+		//     $.ajax({
+		//         url: '/upload/local',
+		//         // data: $(this).serialize(),
+		//         type: 'POST',
+		//         success: function() {
+		// 			console.log("haha");
+		//             // alert(data);
+		//         }
+		//     });
+		// });
 	});
+	// $('#uploadForm').submit(function(e) {
+    // e.preventDefault();
+    // $.ajax({
+    //     url: '/echo/json/',
+    //     data: $(this).serialize(),
+    //     type: 'POST',
+    //     success: function(data) {
+    //         alert(data);
+    //     }
+    // });
 </script>
 
 <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
