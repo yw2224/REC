@@ -64,15 +64,15 @@ const storage = new GridFsStorage({
       //   if (err) {
       //     return reject(err);
       //   }
-      //   const filename = buf.toString('hex') + path.extname(file.originalname);
-      //   const fileInfo = {
-      //     filename: filename,
-      //     // bucketName: 'uploads'
-      //   };
-        // resolve(fileInfo);
-        resolve(file);
-      // });
-    });
+        const filename = file.originalname;
+        const fileInfo = {
+          filename: filename,
+          metadata: req.user.id,
+          // bucketName: 'uploads'
+        };
+        resolve(fileInfo);
+        // resolve(file);
+      });
   }
 });
 
@@ -190,7 +190,7 @@ router.post("/upload/drive", authCheck, function(req, res){
     // });
 
     // var dest = fs.createWriteStream('./models/uploads/test.zip');
-    var dest = bucket.openUploadStream(content.docName);
+    var dest = bucket.openUploadStream(content.docName, {metadata: req.user.id});
     var user = req.user;
     var response = res;
     drive.files.get({
