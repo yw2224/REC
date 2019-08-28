@@ -707,7 +707,24 @@
               // oauthToken: token
           });
 		  console.log(data);
-          navigator.sendBeacon('/upload/drive', data);
+          // var status = navigator.sendBeacon('/upload/drive', data);
+
+		  var request = new XMLHttpRequest();
+  		  request.open("POST", "/upload/drive");
+		  request.setRequestHeader('content-type', 'application/json');
+
+  		  request.onreadystatechange = function(){
+              // alert("onreadystatechange: " + request.readyState );
+              if ( request.readyState === 4 && request.status === 200) {
+  				if (request.status == 200) {
+  					alert ("success! responseText: " + request.responseText);
+  				} else {
+  					alert("fail"  + request.responseText);
+  				}
+  			}
+          };
+		  request.send(data);
+
       }
 </script>
 
@@ -727,9 +744,11 @@
 		request.onreadystatechange = function(){
             // alert("onreadystatechange: " + request.readyState );
             if ( request.readyState === 4 && request.status === 200) {
-                alert ("success! responseText: " + request.responseText);
-            } else {
-				alert("fail");
+				if (request.status == 200) {
+					alert ("success! responseText: " + request.responseText);
+				} else {
+					alert("fail");
+				}
 			}
         };
 

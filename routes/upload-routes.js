@@ -162,8 +162,8 @@ router.get('/upload/secret', function(req, res){
 
 router.post("/upload/drive", authCheck, function(req, res){
     console.log("upload drive");
-
-    var content = JSON.parse(req.body);
+    var content = req.body;
+    // var content = JSON.parse(req.body);
     var token = content.token;
     oAuth2Client.setCredentials(token);
 
@@ -191,6 +191,7 @@ router.post("/upload/drive", authCheck, function(req, res){
 
     // var dest = fs.createWriteStream('./models/uploads/test.zip');
     var user = req.user;
+    var getback = res;
     drive.files.get({
         auth: oAuth2Client,
         fileId: fileId,
@@ -202,6 +203,11 @@ router.post("/upload/drive", authCheck, function(req, res){
         res.data
         .on('end', () => {
             console.log('Done');
+            return getback.status(200).json({
+                success: true,
+                status: 200,
+                message: "Successfully retrieved transaction",
+            });
         })
         .on('error', err => {
             console.log('Error', err);
@@ -212,8 +218,8 @@ router.post("/upload/drive", authCheck, function(req, res){
         // process.stdout.write(fileName);
         // const filePath = `${targetPath}/${fileName}`;
         // fs.writeFileSync('./models/uploads/aaaaa.zip', res.data, options);
-
     });
+    console.log(res);
 });
 
 module.exports = router;
