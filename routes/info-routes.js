@@ -1,29 +1,8 @@
-const router = require("express").Router();
-const keys                  = require("../config/keys");
-const bodyParser            = require("body-parser");
-const User                  = require("../models/user");
-const mongoose              = require("mongoose");
-const Takeout               = require("../models/takeout");
-const fs                    = require("fs");
-const Grid                  = require('gridfs-stream');
-const multer                = require('multer');
-const {google}              = require('googleapis');
-const stream                = require('stream');
-var str                     = require('string-to-stream')
-      var busboyBodyParser = require('busboy-body-parser');
-
-router.use(bodyParser.text());
-router.use(bodyParser.urlencoded({extended: true}));
-router.use(bodyParser.json());
+const router                = require("express").Router(),
+      keys                  = require("../config/keys"),
+      mongoose              = require("mongoose");
+const busboyBodyParser = require('busboy-body-parser');
 router.use(busboyBodyParser());
-
-mongoose.connect(keys.mongo.mongoURI);
-const conn = mongoose.createConnection(keys.mongo.mongoURI);
-
-let gfs;
-conn.once('open', () => {
-    gfs = Grid(conn.db, mongoose.mongo);
-});
 
 const authCheck = function(req, res, next) {
     if(!req.user) {
@@ -34,16 +13,7 @@ const authCheck = function(req, res, next) {
     }
 };
 
-const oAuth2Client = new google.auth.OAuth2(
-  keys.google.clientID,
-  keys.google.clientSecret,
-  "/auth/google/callback"
-);
-
-
 router.post("/upload/info", authCheck, function(req, res) {
-    // busboyBodyParser();
-    console.log("info:");
     req.user.preferredName = req.body.preferredName;
     req.user.visitFrequency = req.body.visitFrequency;
     req.user.timeSlots = JSON.parse(req.body.timeSlots).timeSlots;
@@ -53,27 +23,28 @@ router.post("/upload/info", authCheck, function(req, res) {
     req.user.occupation = req.body.occupation;
     req.user.politicalAttitude = req.body.politicalAttitude;
     req.user.takeout1ID = mongoose.Schema.Types.ObjectId("");
+    req.user.takeout2ID = mongoose.Schema.Types.ObjectId("");
 
-    req.user.save();
-    console.log(req.user);
-    console.log(req.params);
-    console.log(req.body);
+    req.user.save(function(err, user) {
+        if (err) console.log(err);
+        else console.log("Saving user info:\n" + req.user);
+    });
 });
 
 router.post("/upload/intention", authCheck, function(req, res) {
-    console.log(req.body);
-
     req.user.intentions = JSON.parse(req.body.intentions).intentions;
-    console.log(req.user);
-    req.user.save();
+    req.user.save(function(err, user) {
+        if (err) console.log(err);
+        else console.log("User intention saved:\n" + req.user);
+    });
 });
 
 router.post("/upload/memory", authCheck, function(req, res) {
-    console.log(req.body);
-
     req.user.memories = JSON.parse(req.body.memories).memories;
-    console.log(req.user);
-    req.user.save();
+    req.user.save(function(err, user) {
+        if (err) console.log(err);
+        else console.log("User memory saved:\n" + req.user);
+    });
 });
 
 module.exports = router;

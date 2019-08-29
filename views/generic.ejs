@@ -189,7 +189,7 @@
 	                <div class="input-group mb-3">
 
 	                    <div class="custom-file">
-	                        	<input type="file" class="custom-file-input" id="inputGroupFile01" name="localFileName">
+	                        	<input type="file" class="custom-file-input" id="file-from-local" name="localFileName">
 	                        	<!-- <label class="custom-file-label" for="inputGroupFile01">Choose file</label> -->
 								<button type="button" id="submit-local-file">Upload from your computer</button>
 								<!-- <input type="submit" value="Submit"> -->
@@ -603,198 +603,142 @@
             }
         );
     }
-    $(function () {
+	$(function () {
         bs_input_file();
     });
 </script>
 
 <script type="text/javascript">
-      // The Browser API key obtained from the Google API Console.
-      var developerKey = 'AIzaSyDDK_L9y88sbUQBL8PC0wr6zYmNdAik_hw';
-      // The Client ID obtained from the Google API Console. Replace with your own Client ID.
-      var clientId = '1021222270760-o4opjt5b9ejea92voiiblnaoevfjoelo.apps.googleusercontent.com';
-      // Scope to use to access user's photos.
-      var scope = 'https://www.googleapis.com/auth/drive.file';
-      var pickerApiLoaded = false;
-      var oauthToken;
-      var token;
-      // Use the API Loader script to load google.picker and gapi.auth.
-      function onApiLoad() {
-        gapi.load('auth2', onAuthApiLoad);
+	// The Browser API key obtained from the Google API Console.
+	var developerKey = 'AIzaSyDDK_L9y88sbUQBL8PC0wr6zYmNdAik_hw';
+	// The Client ID obtained from the Google API Console.
+	var clientId = '1021222270760-o4opjt5b9ejea92voiiblnaoevfjoelo.apps.googleusercontent.com';
+	// Scope to use to access user's photos.
+	var scope = 'https://www.googleapis.com/auth/drive.file';
+	var pickerApiLoaded = false;
+	var oauthToken;
+	var token;
+	// Use the API Loader script to load google.picker and gapi.auth.
+
+	function onApiLoad() {
+		gapi.load('auth2', onAuthApiLoad);
         gapi.load('picker', onPickerApiLoad);
-      }
-      function onAuthApiLoad() {
-        var authBtn = document.getElementById('submit-drive-file');
+    }
+    function onAuthApiLoad() {
+		var authBtn = document.getElementById('submit-drive-file');
         authBtn.disabled = false;
         authBtn.addEventListener('click', function() {
-          gapi.auth2.init({ client_id: clientId }).then(function(googleAuth) {
-            googleAuth.signIn({ scope: scope }).then(function(result) {
-              handleAuthResult(result.getAuthResponse());
-            })
-          })
-        });
-      }
-      function onPickerApiLoad() {
-        pickerApiLoaded = true;
+			gapi.auth2.init({ client_id: clientId }).then(function(googleAuth) {
+            	googleAuth.signIn({ scope: scope }).then(function(result) {
+					handleAuthResult(result.getAuthResponse());
+            	})
+        	})
+		});
+    }
+	function onPickerApiLoad() {
+		pickerApiLoaded = true;
         createPicker();
-      }
-      function handleAuthResult(authResult) {
-        if (authResult && !authResult.error) {
-            token = authResult;
-            console.dir(authResult);
-          oauthToken = authResult.access_token;
-          createPicker();
+    }
+    function handleAuthResult(authResult) {
+    	if (authResult && !authResult.error) {
+        	token = authResult;
+        	console.dir(authResult);
+          	oauthToken = authResult.access_token;
+          	createPicker();
         }
-      }
-      // Create and render a Picker object for picking user Photos.
-      function createPicker() {
-        if (pickerApiLoaded && oauthToken) {
-          var picker = new google.picker.PickerBuilder().
-              addView(google.picker.ViewId.DOCS).
-              setOAuthToken(oauthToken).
-              setDeveloperKey(developerKey).
-              setCallback(pickerCallback).
-              build();
-          picker.setVisible(true);
-        }
-      }
-      // A simple callback implementation.
-      function pickerCallback(data) {
-        var url = 'nothing';
+    }
+	// Create and render a Picker object for picking user Photos.
+    function createPicker() {
+		if (pickerApiLoaded && oauthToken) {
+        var picker = new google.picker.PickerBuilder().
+			addView(google.picker.ViewId.DOCS).
+			setOAuthToken(oauthToken).
+			setDeveloperKey(developerKey).
+			setCallback(pickerCallback).
+			build();
+			picker.setVisible(true);
+		}
+	}
+	// A simple callback implementation.
+	function pickerCallback(data) {
+		var url = 'nothing';
         var docID;
         if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
-          var doc = data[google.picker.Response.DOCUMENTS][0];
-          url = doc[google.picker.Document.URL];
-          docID = doc[google.picker.Document.ID];
-          // var uploadBtn = document.getElementById('upload');
-          // uploadBtn.disabled = false;
+        	var doc = data[google.picker.Response.DOCUMENTS][0];
+        	url = doc[google.picker.Document.URL];
+          	docID = doc[google.picker.Document.ID];
         }
-        console.dir(doc);
-        console.dir(token);
-        var message = 'You picked: ' + url + "," + docID;
-        // document.getElementById('result').innerHTML = message;
         document.getElementById('file-from-drive').innerHTML = docID;
         postRequest(doc);
-
-		// printFile(docID);
-      }
-
-	  function printFile(fileId) {
-		  console.log(fileId);
-		  gapi.client.load('drive', 'v3', callback);
+    }
+	function printFile(fileId) {
+		console.log(fileId);
+		gapi.client.load('drive', 'v3', callback);
   		var request = gapi.client.drive.files.get({
     		'fileId': fileId,
 			'alt': media
   		});
   		request.execute(function(resp) {
 			console.log(resp);
-    	console.log('Title: ' + resp.title);
-    	console.log('Description: ' + resp.description);
-    	console.log('MIME type: ' + resp.mimeType);
-  	  });
-}
+    		console.log('Title: ' + resp.title);
+    		console.log('Description: ' + resp.description);
+    		console.log('MIME type: ' + resp.mimeType);
+  	  	});
+	}
 
-      function postRequest(doc) {
-		  const data = JSON.stringify({
-              docID: doc[google.picker.Document.ID],
-              docURL: doc[google.picker.Document.URL],
-			  docName: doc[google.picker.Document.NAME],
-              token: token
-              // access_token: token.access_token,
-              // expires_in: token.expires_in,
-              // token_type: token.token_type,
-              // scope: token.scope,
-              // id_token: token.id_token,
-              // oauthToken: token
-          });
-		  console.log(data);
-          // var status = navigator.sendBeacon('/upload/drive', data);
-
-		  var request = new XMLHttpRequest();
-  		  request.open("POST", "/upload/drive");
-		  request.setRequestHeader('content-type', 'application/json');
-
-  		  request.onreadystatechange = function(){
-              // alert("onreadystatechange: " + request.readyState );
-              if ( request.readyState === 4 && request.status === 200) {
+    function postRequest(doc) {
+		const data = JSON.stringify({
+        	docID: doc[google.picker.Document.ID],
+            docURL: doc[google.picker.Document.URL],
+		  	docName: doc[google.picker.Document.NAME],
+            token: token
+        });
+		var request = new XMLHttpRequest();
+  		request.open("POST", "/upload/drive");
+		request.setRequestHeader('content-type', 'application/json');
+		request.onreadystatechange = function(){
+        	if ( request.readyState === 4 && request.status === 200) {
   				if (request.status == 200) {
-  					alert ("success! responseText: " + request.responseText);
+  					alert (request.responseText);
   				} else {
-  					alert("fail"  + request.responseText);
+  					alert("Fail. Please try again.");
   				}
   			}
-          };
-		  request.send(data);
-
-      }
+        };
+  		request.send(data);
+    }
 </script>
 
 <script type="text/javascript">
 	var form = document.getElementById("msform");
 	document.getElementById("submit-local-file").addEventListener("click", function () {
-		form.action='/upload/local';
-		form.method = "post";
-		form.enctype="multipart/form-data";
-		var formdata = new FormData(form);
-		// form.submit();
-		// console.log("????");
-		var request = new XMLHttpRequest();
-		request.open("POST", "/upload/local");
-		request.send(formdata);
-		console.log("asdfsdfs");
-		request.onreadystatechange = function(){
-            // alert("onreadystatechange: " + request.readyState );
-            if ( request.readyState === 4 && request.status === 200) {
-				if (request.status == 200) {
-					alert ("success! responseText: " + request.responseText);
-				} else {
-					alert("fail");
+		var filename = document.getElementById("file-from-local").value;
+		if (filename == "") {
+			alert("Please select your takeout file!");
+		} else {
+			form.action='/upload/local';
+			form.method = "post";
+			form.enctype="multipart/form-data";
+			var formdata = new FormData(form);
+
+			var request = new XMLHttpRequest();
+			request.open("POST", "/upload/local");
+			request.send(formdata);
+
+			request.onreadystatechange = function() {
+	            if ( request.readyState === 4 && request.status === 200) {
+					if (request.status == 200) {
+						alert(request.responseText);
+					} else {
+						alert("Fail. Please try again.");
+					}
 				}
-			}
-        };
-
-		console.log(request.responseText);
-
-		// form.submit(function(e) {
-		// 	// e.preventDefault();
-		// 	console.log("haaaaha");
-		//     $.ajax({
-		//         url: '/upload/local',
-		//         // data: $(this).serialize(),
-		//         type: 'POST',
-		//         success: function() {
-		// 			console.log("haha");
-		//             // alert(data);
-		//         }
-		//     });
-		// });
+	        };
+		}
 	});
-	// $('#uploadForm').submit(function(e) {
-    // e.preventDefault();
-    // $.ajax({
-    //     url: '/echo/json/',
-    //     data: $(this).serialize(),
-    //     type: 'POST',
-    //     success: function(data) {
-    //         alert(data);
-    //     }
-    // });
 </script>
 
 <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
-
-<!-- <script>
-    // upload file name appears in the box
-    // Add the following code if you want the name of the file appear on select
-    window.onload = function () {
-        var notification = document.querySelector("#overlay");
-        notification.style.visibility = "hidden";
-    };
-    $(".custom-file-input").on("change", function () {
-        var fileName = $(this).val().split("\\").pop();
-        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-    });
-</script> -->
 
 </body>
 </html>
