@@ -27,7 +27,8 @@ passport.use(new GoogleStrategy({
         } else {
             user = new User({
                 username: profile.displayName,
-                googleId: profile.id
+                googleId: profile.id,
+                email: profile.email,
             });
             user.save(function(err, user) {
                 if (err) console.log(err);

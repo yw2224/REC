@@ -176,14 +176,14 @@
 	            <fieldset>
 	                <h2 class="fs-title">Previous take-out</h2>
 	                <h3 class="fs-subtitle">Your YouTube history of last 3 months</h3>
-	                <ol style="color: #343434;">
+	                <ul style="color: #343434;">
 	                    <li>Visit <a href="https://takeout.google.com/settings/takeout/custom/youtube">YouTube Takeout
 	                        Website</a> and sign in with your google account
 	                    </li>
 	                    <li>Select include all kinds of data and press ‘Next step’.</li>
 	                    <li>Customize archive format to .zip with 2GB size and press “Create Archive”</li>
 	                    <li>Upload the zip file</li>
-	                </ol>
+	                </ul>
 
 
 	                <div class="input-group mb-3">
@@ -205,7 +205,7 @@
 	                </div>
 	                <!--<input type="file" name="pic" accept="image/*">-->
 	                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-	                <input type="button" name="next" class="next action-button" value="Next"/>
+					<input type="button" name="next" class="next action-button disabled" id="fileNext" value="Next"/>
 	            </fieldset>
 
 	            <fieldset>
@@ -290,7 +290,7 @@
 	            </fieldset>
 
 	        	<fieldset>
-	                <h2 class="fs-title">What topics do you watched on YouTube recently?<br> Please select 3-10 options</h2>
+	                <h2 class="fs-title">What topics did you watch on YouTube recently?<br> Please select 3-10 options</h2>
 		             <div class="row">
 						  <div class="col-sm-4 ">
 						    <label class="checkbox-inline">
@@ -394,24 +394,36 @@
 <script type="text/javascript">
 	$("#infoNext").click(function(){
 		var preferredName = $('textarea#preferredName').val();
-		// var preferredName = $('preferredName').val();
-		console.log(preferredName);
+		var visitFrequencyLth = document.getElementById('visitFrequency').options.length;
+		var feelAboutYoutubeRecLth = document.getElementById('feelAboutYoutubeRec').options.length;
+		var recWatchFrequencyLth =document.getElementById('recWatchFrequency').options.length;
+		// console.log(preferredName);
+		// console.log(document.getElementById('visitFrequency').options)
 
-		var vals = []
+		var timeslot_vals = []
     	$('input:checkbox[name="timeSlot"]').each(function() {
         	if (this.checked) {
-            	vals.push(this.value);
+            	timeslot_vals.push(this.value);
         	}
     	});
-		var timeSlots = JSON.stringify({timeSlots: vals});
+		var timeSlots = JSON.stringify({timeSlots: timeslot_vals});
 
-		vals = []
+		var purpose_vals = []
 		$('input:checkbox[name="purpose"]').each(function() {
         	if (this.checked) {
-            	vals.push(this.value);
+            	purpose_vals.push(this.value);
         	}
     	});
-		purposes = JSON.stringify({purposes: vals});
+		purposes = JSON.stringify({purposes: purpose_vals});
+
+		if (preferredName == "" || visitFrequencyLth < 1 || feelAboutYoutubeRecLth < 1
+		|| recWatchFrequencyLth < 1 || timeslot_vals.length < 1 || purpose_vals.length < 1) {
+			alert("Please select all required fields!");
+			stop_flag = 1;
+			return;
+		} else {
+			stop_flag = 0;
+		}
 
 		var form = document.getElementById("msform");
 		var formdata = new FormData(form);
@@ -426,10 +438,24 @@
 
 <script type="text/javascript">
 	var stop_flag = 0;
+	$("#fileNext").click(function(){
+		console.log("here at file Next clicked");
+		console.log($(this).hasClass('disabled'));
+		if($(this).hasClass('disabled')) {
+        	alert('Please upload your takeout file!');
+			stop_flag = 1;
+			return;
+    	} else {
+			stop_flag = 0;
+		}
+	});
+</script>
+
+<script type="text/javascript">
+	var stop_flag = 0;
 	$("#intentionNext").click(function(){
 		console.log("here at intention Next clicked");
 		var elems = $('[id^=intendOpt]').filter(':checked');
-		console.log(elems.length);
 		if (elems.length < 3){
 			alert("Please select at least 3 topics");
 			stop_flag = 1;
@@ -700,6 +726,7 @@
         	if ( request.readyState === 4 && request.status === 200) {
   				if (request.status == 200) {
   					alert (request.responseText);
+					$('#fileNext').removeClass('disabled');
   				} else {
   					alert("Fail. Please try again.");
   				}
@@ -729,6 +756,7 @@
 	            if ( request.readyState === 4 && request.status === 200) {
 					if (request.status == 200) {
 						alert(request.responseText);
+						$('#fileNext').removeClass('disabled');
 					} else {
 						alert("Fail. Please try again.");
 					}

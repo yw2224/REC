@@ -5,7 +5,7 @@ const router               = require("express").Router(),
 router.get('/auth/google', passport.authenticate('google', {
     accessType: 'offline',
     prompt: 'consent',
-    scope: ['profile'] //, 'https://www.googleapis.com/auth/drive.file']
+    scope: ['profile', 'email'], //, 'https://www.googleapis.com/auth/drive.file']
 }));
 
 router.get('/auth/google/callback', passport.authenticate('google'), function(req, res) {
