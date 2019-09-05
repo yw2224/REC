@@ -32,6 +32,20 @@ app.use(authRoutes);
 app.use(uploadRoutes);
 app.use(infoRoutes);
 
+var fs = require('fs');
+var util = require('util');
+var dir = __dirname + '/LOG';
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
+var log_file = fs.createWriteStream(dir + '/debug.log', {flags : 'w'});
+var log_stdout = process.stdout;
+
+console.log = function(d) { //
+  log_file.write(util.format(d) + '\n');
+  log_stdout.write(util.format(d) + '\n');
+};
+
 app.get("/", function(req, res){
     res.render("index");
 });

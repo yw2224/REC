@@ -1,0 +1,19 @@
+Server started.
+Database connected.
+user is:
+Saving user info:
+{ timeSlots: [ 'Noon (11am - 2pm)' ],
+  purposes: [ 'Kill Time' ],
+  intentions: [ 'Education', 'Film & animation', 'Gaming' ],
+  memories: [ 'Gaming', 'News & Politics', 'People & Blogs' ],
+  _id: 5d6bec72b6a8ef3ddaa0ab2f,
+  username: 'shuning zhg',
+  googleId: '101474901126587717292',
+  email: 'xmyiwz@gmail.com',
+  __v: 53,
+  feelAboutYoutubeRec: 'They are mostly unrelated',
+  occupation: 'Choose...',
+  preferredName: 'adsf',
+  recWatchFrequency: 'Very often',
+  visitFrequency: '3-5 times a week',
+  takeout1Id: 5d71415b473b45135d2e5811 }
