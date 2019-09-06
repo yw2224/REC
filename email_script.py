@@ -70,15 +70,19 @@ def read_participant_info():
     participant_list = []
     with open(dirname + "/user.info", "w+") as f:
         for i, user in enumerate(users.find()):
-            participant = dict()
-            participant['id'] = i
-            participant['group'] = i % 2
-            participant['email'] = user["email"]
-            participant['name'] = user["preferredName"]
-            participant['history'] = [str(category2id[mem]) for mem in user['memories']]
-            participant['intent'] = [str(category2id[intent]) for intent in user['intentions']]
-            participant['recommended'] = []
-            participant_list.append(participant)
+            try:
+                participant = dict()
+                participant['id'] = i
+                participant['group'] = i % 2
+                participant['email'] = user["email"]
+                participant['name'] = user["preferredName"]
+                participant['history'] = [str(category2id[mem]) for mem in user['memories']]
+                participant['intent'] = [str(category2id[intent]) for intent in user['intentions']]
+                participant['recommended'] = []
+                participant_list.append(participant)
+            except:
+                pass
+            
     print(participant_list)
     return participant_list
 
