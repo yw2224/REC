@@ -158,7 +158,7 @@ def read_records(participant_list):
     records=dict()
     for line in lines:
         id, record = line.split(',')
-        record = record.slipt(':')
+        record = record.split(':')
         records[id] = record
     for p in participant_list:
         p['recommended'] = records.get(p['id'], [])
