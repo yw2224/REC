@@ -71,7 +71,7 @@ def read_participant_info():
     with open(dirname + "/user.info", "w+") as f:
         for i, user in enumerate(users.find()):
             participant = dict()
-            participant['group'] = i
+            participant['id'] = i
             participant['group'] = i % 2
             participant['email'] = user["email"]
             participant['name'] = user["preferredName"]
